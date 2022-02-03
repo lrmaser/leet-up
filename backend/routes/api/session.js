@@ -6,6 +6,16 @@ const { User } = require('../../db/models');
 
 const router = express.Router();
 
+// GET /api/session - RESTORE SESSION USER
+router.get('/', restoreUser, (req, res) => {
+  const { user } = req;
+  if (user) {
+    return res.json({
+      user: user.toSafeObject()
+    });
+  } else return res.json({});
+});
+
 // POST /api/session - LOG IN
 router.post('/', asyncHandler(async (req, res, next) => {
   const { credential, password } = req.body;
