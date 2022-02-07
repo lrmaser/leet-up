@@ -17,22 +17,16 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
-
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://github.com/lrmaser/leet-up">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
 <h3 align="center">LeetUp</h3>
 
   <p align="center">
-    project_description
+    A Meetup clone for developers to meet with fellow developers.
     <br />
-    <a href="https://github.com/lrmaser/leet-up"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/lrmaser/leet-up/wiki"><strong>Explore the docs »</strong></a>
     <br />
     <br />
+    <a href="https://leetup.herokuapp.com/">View Site</a>
+    ·
     <a href="https://github.com/lrmaser/leet-up/issues">Report Bug</a>
     ·
     <a href="https://github.com/lrmaser/leet-up/issues">Request Feature</a>
@@ -60,7 +54,6 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
@@ -73,7 +66,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-About the project
+LeetUp, a Meetup clone, is a place for developers (and friends of developers) to find like-minded peers. Users can create and join groups in their areas of interest as well as attend events organized by those groups.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -97,12 +90,10 @@ About the project
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
 * npm
   ```sh
   npm install npm@latest -g
@@ -110,19 +101,48 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone this repo.
    ```sh
-   git clone https://github.com/lrmaser/leet-up.git
+   git clone git@github.com:lrmaser/leet-up.git
    ```
-3. Install NPM packages
+2. Install dependencies from the root directory.
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+3. Create a .env file in the backend directory based on the .env.example also found within the backend directory.
+4. In the .env file enter your desired username, password, database name, a secured combination of characters for your JWT_SECRET, and your desired PORT (preferably 5000).
+5. Create a PostgreSQL USER with CREATEDB and PASSWORD using the same information entered into your .env file.
+   ```sh
+   CREATE USER <name> WITH CREATEDB PASSWORD <'password'>
    ```
+6. Create Database, Migrate, and Seed models.
+   ```sh
+   npm run db:setup
+   ```
+7. Add the following proxy to your package.json file within your frontend directory, matching the PORT configuration in your .env file.
+   ```sh
+   "proxy": "http://localhost:5000"
+   ```
+8. Start the services in the backend directory.
+   ```sh
+   npm start
+   ```
+9. Start the services in the frontend directory, which should open the project in your default browser. If not, navigate to http://localhost:3000.
+   ```sh
+   npm start
+   ```
+10. You can use a Demo user or create an account to begin using LeetUp.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+
+_For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -131,10 +151,11 @@ This is an example of how to list things you need to use the software and how to
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [ ] Events
+- [ ] Groups
+    - [ ] Calendar
+    - [ ] Search by location & group info
+- [ ] RSVPs
 
 See the [open issues](https://github.com/lrmaser/leet-up/issues) for a full list of proposed features (and known issues).
 
