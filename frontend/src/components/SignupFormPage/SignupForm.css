@@ -1,0 +1,62 @@
+.signup-main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  max-width: 1120px;
+}
+
+.signup-form-container {
+  align-items: center;
+  border: 1px solid rgb(230, 230, 230);
+  border-radius: 8px;
+  display: flex;
+  padding: 32px 32px 60px 32px;
+  max-width: 484px;
+}
+
+.signup-headers {}
+
+.signup-form-contents {}
+
+.signup-name-container,
+.signup-email-container,
+.signup-password-container,
+.signup-confirm-password-container,
+.signup-age-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4px;
+}
+
+#signup-name,
+#signup-email,
+#signup-password,
+#signup-confirm-password {
+  border: 1px solid rgb(230, 230, 230);
+  border-radius: 8px;
+  width: 290px;
+  height: 22px;
+  padding: 8px 12px;
+}
+
+.signup-form-button {
+  height: 32px;
+  padding: 8px 12px;
+  width: 320px;
+  background-color: #f65858;
+  border-color: #f65858;
+  border-radius: 8px;
+  color: #fff;
+  padding: 8px 12px;
+  margin-top: 24px;
+  border: 0;
+  font-weight: 600;
+}
+
+.signup-already-member {
+  width: 344px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+}
