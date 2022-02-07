@@ -26,6 +26,15 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Event.associate = function(models) {
     // associations can be defined here
+    const columnMapping = {
+      through: 'Rsvp',
+      otherKey: 'userId',
+      foreignKey: 'eventId'
+    };
+
+    Event.belongsToMany(models.User, columnMapping);
+    Event.belongsTo(models.User, { foreignKey: 'hostId' });
+    Event.belongsTo(models.Group, { foreignKey: 'categoryId' });
   };
   return Event;
 };
