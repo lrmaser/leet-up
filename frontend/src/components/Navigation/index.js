@@ -26,7 +26,9 @@ const Navigation = ({ isLoaded }) => {
   return (
     <ul>
       <li>
-        <NavLink exact to='/'>Home</NavLink>
+        <NavLink exact to='/'>
+          <img src='/images/LeetUpLogo.png' alt='LeetUp Logo'></img>
+        </NavLink>
         {isLoaded && sessionLinks}
       </li>
     </ul>

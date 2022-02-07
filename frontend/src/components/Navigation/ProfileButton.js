@@ -33,7 +33,7 @@ const ProfileButton = ({ user }) => {
     <>
       <button className='user-icon-button' onClick={openMenu}>
         <div className='user-icon'>
-          <i class="fas fa-user-circle"></i>
+          <i class="fas fa-user"></i>
         </div>
       </button>
       {showMenu && (
