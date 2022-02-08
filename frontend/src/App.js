@@ -5,6 +5,8 @@ import { Route, Switch } from 'react-router-dom';
 import * as sessionActions from './store/session';
 import Navigation from './components/Navigation';
 import SignupFormPage from './components/SignupFormPage';
+import EventsList from './components/EventsList';
+import EventDetail from './components/EventDetail';
 
 function App() {
   const dispatch = useDispatch();
@@ -21,6 +23,15 @@ function App() {
         <Switch>
           <Route path='/signup'>
             <SignupFormPage />
+          </Route>
+          <Route path='/events'>
+            <EventsList />
+          </Route>
+          <Route path='/events/:eventId'>
+            <EventDetail />
+          </Route>
+          <Route>
+            404 Not Found!
           </Route>
         </Switch>
       )}

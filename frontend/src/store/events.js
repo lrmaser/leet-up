@@ -102,7 +102,7 @@ export const updateEvent = (event) => async (dispatch) => {
 // Event details page - SELECTED_EVENT
 
 /******************** Reducer ********************/
-const initialState = { events: [] };
+const initialState = { events: {} };
 
 // Complete cases
 const eventReducer = (state = initialState, action) => {
@@ -110,6 +110,10 @@ const eventReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_EVENTS:
       newState = {...state};
+      const events = {};
+      action.events.forEach(event => events[event.id] = event);
+      newState.events = events;
+      return newState;
     case ADD_EVENT:
       newState = {...state};
     case REMOVE_EVENT:
