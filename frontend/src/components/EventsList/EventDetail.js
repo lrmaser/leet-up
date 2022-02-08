@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const EventDetail = ({ id, image, date, name, categoryId }) => {
+const EventDetail = ({ id, image, date, eventName, groupName }) => {
   return (
     <div>
       <div>
@@ -8,8 +8,8 @@ const EventDetail = ({ id, image, date, name, categoryId }) => {
       </div>
       <div>
         <p>{date}</p>
-        <p>{name}</p>
-        <p>{categoryId}</p>
+        <p>{eventName}</p>
+        <p>{groupName}</p>
       </div>
     </div>
   );

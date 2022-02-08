@@ -7,7 +7,9 @@ const router = express.Router();
 
 // GET /api/events - READ
 router.get('/', asyncHandler(async (req, res) => {
-  const events = await Event.findAll();
+  const events = await Event.findAll({
+    include: Group
+  });
   return res.json(events);
 }));
 

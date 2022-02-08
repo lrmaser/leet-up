@@ -22,8 +22,8 @@ const EventsList = () => {
         <Link to='/groups'>Groups</Link>
       </div>
       <div>
-        {events.map(({ id, image, date, name, categoryId }) => (
-          <EventDetail key={id} id={id} image={image} date={date} name={name} categoryId={categoryId}/>
+        {events.map(event => (
+          <EventDetail key={event.id} id={event.id} image={event.image} date={event.date} eventName={event.name} groupName={event.Group.name}/>
         ))}
       </div>
     </div>
