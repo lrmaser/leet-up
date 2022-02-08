@@ -10,12 +10,14 @@ router.get('/', asyncHandler(async (req, res) => {
   const events = await Event.findAll({
     include: Group
   });
+
   return res.json(events);
 }));
 
 // POST /api/events - CREATE
 router.post('/', asyncHandler(async (req, res) => {
   const event = await Event.create(req.body);
+
   return res.json(event);
 }));
 
@@ -49,6 +51,14 @@ router.put('/api/events/:eventId(\\d+)', asyncHandler(async (req, res) => {
   });
 
   return res.json(event.id);
+}));
+
+// GET /api/events/:eventId - READ
+router.get('/api/events/:eventId(\\d+)', asyncHandler(async (req, res) => {
+  const eventId = req.params.eventId;
+  const event = await Event.findByPk(eventId);
+
+  return res.json(event);
 }));
 
 

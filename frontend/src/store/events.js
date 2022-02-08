@@ -99,7 +99,15 @@ export const updateEvent = (event) => async (dispatch) => {
   return res;
 };
 
-// Event details page - SELECTED_EVENT
+// GET /api/events/:eventId - READ
+export const getEventDetails = (eventId) => async (dispatch) => {
+  const res = await csrfFetch(`/api/events/${eventId}`);
+
+  if (res.ok) {
+    const event = await res.json();
+    dispatch(selectedEvent(event));
+  }
+};
 
 /******************** Reducer ********************/
 const initialState = { events: {} };
