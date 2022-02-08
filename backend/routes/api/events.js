@@ -22,7 +22,7 @@ router.post('/', asyncHandler(async (req, res) => {
 }));
 
 // DELETE /api/events/:eventId - DELETE
-router.delete('/api/events/:eventId(\\d+)', asyncHandler(async (req, res) => {
+router.delete('/:eventId(\\d+)', asyncHandler(async (req, res) => {
   const eventId = req.params.eventId;
   const event = await Event.findByPk(eventId);
 
@@ -38,7 +38,7 @@ router.delete('/api/events/:eventId(\\d+)', asyncHandler(async (req, res) => {
 }));
 
 // PUT /api/events/:eventId - UPDATE
-router.put('/api/events/:eventId(\\d+)', asyncHandler(async (req, res) => {
+router.put('/:eventId(\\d+)', asyncHandler(async (req, res) => {
   const eventId = req.params.eventId;
   const event = await Event.findByPk(eventId);
 
@@ -54,7 +54,7 @@ router.put('/api/events/:eventId(\\d+)', asyncHandler(async (req, res) => {
 }));
 
 // GET /api/events/:eventId - READ
-router.get('/api/events/:eventId(\\d+)', asyncHandler(async (req, res) => {
+router.get('/:eventId(\\d+)', asyncHandler(async (req, res) => {
   const eventId = req.params.eventId;
   const event = await Event.findByPk(eventId);
 

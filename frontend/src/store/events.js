@@ -107,6 +107,8 @@ export const getEventDetails = (eventId) => async (dispatch) => {
     const event = await res.json();
     dispatch(selectedEvent(event));
   }
+
+  return res;
 };
 
 /******************** Reducer ********************/
@@ -124,12 +126,22 @@ const eventReducer = (state = initialState, action) => {
       return newState;
     case ADD_EVENT:
       newState = {...state};
+      return;
     case REMOVE_EVENT:
       newState = {...state};
+      return;
     case EDIT_EVENT:
       newState = {...state};
+      return;
     case SELECTED_EVENT:
-      newState = {...state};
+      newState = {
+        ...state,
+        [action.event.id]: {
+          ...state[action.event.id],
+          ...action.event
+        }
+      };
+      return newState;
     default:
       return state;
   }

@@ -13,7 +13,7 @@ const EventsList = () => {
 
   useEffect(() => {
     dispatch(getEvents());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
