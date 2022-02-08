@@ -24,12 +24,18 @@ const Navigation = ({ isLoaded }) => {
   }
 
   return (
-    <ul>
+    <ul className='nav-ul'>
       <li>
-        <NavLink exact to='/'>
-          <img src='/images/LeetUpLogo.png' alt='LeetUp Logo'></img>
-        </NavLink>
-        {isLoaded && sessionLinks}
+        <div className='nav-container'>
+          <div className='nav-logo'>
+            <NavLink exact to='/'>
+              <img src='/images/LeetUpLogo.png' alt='LeetUp Logo'></img>
+            </NavLink>
+          </div>
+          <div className='nav-links'>
+            {isLoaded && sessionLinks}
+          </div>
+        </div>
       </li>
     </ul>
   );
