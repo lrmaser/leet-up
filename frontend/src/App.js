@@ -6,7 +6,7 @@ import * as sessionActions from './store/session';
 import Navigation from './components/Navigation';
 import SignupFormPage from './components/SignupFormPage';
 import EventsList from './components/EventsList';
-import EventDetail from './components/EventDetail';
+import EventDetailPage from './components/EventDetailPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -28,7 +28,7 @@ function App() {
             <EventsList />
           </Route>
           <Route path='/events/:eventId'>
-            <EventDetail />
+            <EventDetailPage />
           </Route>
           <Route>
             404 Not Found!

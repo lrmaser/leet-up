@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const eventDetail = ({ id, image, date, name, categoryId }) => {
+const EventDetail = ({ id, image, date, name, categoryId }) => {
   return (
     <div>
       <div>
@@ -15,4 +15,4 @@ const eventDetail = ({ id, image, date, name, categoryId }) => {
   );
 };
 
-export default eventDetail;
+export default EventDetail;
