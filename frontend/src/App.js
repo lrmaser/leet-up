@@ -7,6 +7,7 @@ import Navigation from './components/Navigation';
 import SignupFormPage from './components/SignupFormPage';
 import EventsList from './components/EventsList';
 import EventDetailPage from './components/EventDetailPage';
+import EventFormPage from './components/EventFormPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route exact path='/events'>
             <EventsList />
+          </Route>
+          <Route path='/events/new'>
+            <EventFormPage />
           </Route>
           <Route path='/events/:eventId'>
             <EventDetailPage />

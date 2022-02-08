@@ -8,6 +8,7 @@ import './SignupForm.css';
 const SignupFormPage = () => {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
+
   const [ username, setUsername ] = useState('');
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
@@ -45,7 +46,7 @@ const SignupFormPage = () => {
           </div>
           <div className='signup-form-contents'>
             <div className='signup-name-container'>
-              <label for='signup-name'>Username</label>
+              <label htmlFor='signup-name'>Username</label>
                 <input
                   type='text'
                   id='signup-name'
@@ -56,7 +57,7 @@ const SignupFormPage = () => {
                 />
             </div>
             <div className='signup-email-container'>
-              <label for='signup-email'>Email Address</label>
+              <label htmlFor='signup-email'>Email Address</label>
                 <input
                   type='text'
                   id='signup-email'
@@ -68,7 +69,7 @@ const SignupFormPage = () => {
                 />
             </div>
             <div className='signup-password-container'>
-              <label for='signup-password'>Password</label>
+              <label htmlFor='signup-password'>Password</label>
                 <input
                   type='password'
                   id='signup-password'
@@ -79,7 +80,7 @@ const SignupFormPage = () => {
                 />
             </div>
             <div className='signup-confirm-password-container'>
-              <label for='signup-confirm-password'>Confirm Password</label>
+              <label htmlFor='signup-confirm-password'>Confirm Password</label>
                 <input
                   type='password'
                   id='signup-confirm-password'
@@ -90,7 +91,7 @@ const SignupFormPage = () => {
                 />
             </div>
             <div className='signup-age-container'>
-              <label for='signup-age'>Age</label>
+              <label htmlFor='signup-age'>Age</label>
                 <input
                   type='checkbox'
                   id='signup-age'

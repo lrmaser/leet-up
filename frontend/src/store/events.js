@@ -125,8 +125,11 @@ const eventReducer = (state = initialState, action) => {
       newState.events = events;
       return newState;
     case ADD_EVENT:
-      newState = {...state};
-      return;
+      newState = {
+        ...state,
+        [action.newEvent.id]: action.newEvent
+      };
+      return newState;
     case REMOVE_EVENT:
       newState = {...state};
       return;
