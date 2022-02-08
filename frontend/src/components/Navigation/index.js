@@ -12,7 +12,11 @@ const Navigation = ({ isLoaded }) => {
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <>
+        <NavLink to='/groups/new'>Start a New Group</NavLink>
+        <NavLink to='events/new'>Create an Event</NavLink>
+        <ProfileButton user={sessionUser} />
+      </>
     );
   } else {
     sessionLinks = (
