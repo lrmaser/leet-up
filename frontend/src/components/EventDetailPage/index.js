@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
-import { getEventDetails } from '../../store/events';
+import { getEventDetails, deleteEvent } from '../../store/events';
 import './EventDetail.css';
 
 // Refactor to get full day name and full month name
@@ -22,6 +22,7 @@ const formatTime = (time) => {
 
 const EventDetailPage = () => {
   const { eventId } = useParams();
+  const history = useHistory();
   const event = useSelector(state => state.events[eventId]);
   const sessionUser = useSelector(state => state.session.user);
 
@@ -31,6 +32,24 @@ const EventDetailPage = () => {
     dispatch(getEventDetails(eventId));
   }, [dispatch, eventId]);
 
+  const handleEdit = async (e) => {
+    e.preventDefault();
+
+  };
+
+  const handleDelete = async (e) => {
+    e.preventDefault();
+
+    dispatch(deleteEvent(eventId));
+
+    history.push('/events');
+  };
+
+  const handleAttend = async (e) => {
+    e.preventDefault();
+
+  };
+
   if (!event) return null;
 
   // If user hosts event, show edit/delete buttons, else show attend event button
@@ -39,7 +58,7 @@ const EventDetailPage = () => {
     eventButtons = (
       <div className='event-details-buttons'>
         <button type='button'>Edit</button>
-        <button type='button'>Delete</button>
+        <button type='button' onClick={handleDelete}>Delete</button>
       </div>
     );
   } else if (sessionUser && sessionUser.id !== event.hostId) {
