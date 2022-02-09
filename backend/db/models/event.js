@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       type: DataTypes.INTEGER
     },
-    image: DataTypes.STRING(255),
+    image: DataTypes.TEXT,
     details: DataTypes.TEXT
   }, {});
   Event.associate = function(models) {

@@ -31,7 +31,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       image: {
-        type: Sequelize.STRING(255)
+        type: Sequelize.TEXT
       },
       details: {
         type: Sequelize.TEXT
