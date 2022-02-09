@@ -27,7 +27,9 @@ const EventDetail = ({ id, image, date, eventName, groupName }) => {
         <div className='event-list-group-name-container'>
           <p className='event-list-group-name'>{groupName}</p>
         </div>
-        <div className='event-list-attendees'></div>
+        <div className='event-list-attendees-container'>
+          <div className='event-list-attendees'>0 attendees</div>
+        </div>
       </div>
     </div>
   );
