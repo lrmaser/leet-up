@@ -1,4 +1,17 @@
 // import { Link } from "react-router-dom";
+const formatDate = (date) => {
+  const dateString = new Date(date).toDateString();
+  const dateStringSplit = dateString.split(' ');
+  const formattedDate = `${dateStringSplit[0]}, ${dateStringSplit[1]} ${dateStringSplit[2]}`;
+  return formattedDate;
+};
+
+const formatTime = (time) => {
+  const timeString = new Date(time).toLocaleTimeString();
+  const timeStringSplit = timeString.split(':');
+  const formattedTime = `${timeStringSplit[0]}:${timeStringSplit[1]} ${timeStringSplit[2][3]}M`;
+  return formattedTime;
+};
 
 const EventDetail = ({ id, image, date, eventName, groupName }) => {
   return (
@@ -8,7 +21,7 @@ const EventDetail = ({ id, image, date, eventName, groupName }) => {
       </div>
       <div className='event-list-info'>
         <div className='event-list-date-container'>
-          <time className='event-list-date' dateTime={date}>{date}</time>
+          <div className='event-list-date'>{`${formatDate(date)} @ ${formatTime(date)}`}</div>
         </div>
         <p className='event-list-event-name'>{eventName}</p>
         <div className='event-list-group-name-container'>

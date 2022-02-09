@@ -18,6 +18,7 @@ const EventFormPage = () => {
   const [ categoryId, setCategoryId ] = useState(); // Default selection
   const [ name, setName ] = useState('');
   const [ date, setDate ] = useState(`${defaultDate()}`);
+  const [ time, setTime ] = useState('09:00');
   const [ capacity, setCapacity ] = useState(1);
   const [ image, setImage ] = useState('');
   const [ details, setDetails ] = useState('');
@@ -25,6 +26,7 @@ const EventFormPage = () => {
   const updateCategoryId = (e) => setCategoryId(e.target.value);
   const updateName = (e) => setName(e.target.value);
   const updateDate = (e) => setDate(e.target.value);
+  const updateTime = (e) => setTime(e.target.value);
   const updateCapacity = (e) => setCapacity(e.target.value);
   const updateImage = (e) => setImage(e.target.value);
   const updateDetails = (e) => setDetails(e.target.value);
@@ -36,7 +38,7 @@ const EventFormPage = () => {
       hostId: sessionUser.id,
       categoryId,
       name,
-      date,
+      date: `${date} ${time}`,
       capacity,
       image,
       details
@@ -90,6 +92,17 @@ const EventFormPage = () => {
               name='event-form-date'
               value={date}
               onChange={updateDate}
+              required
+            />
+          </div>
+          <div className='event-form-time-container'>
+            <label htmlFor='event-form-time'>Event Time</label>
+            <input
+              type='time'
+              id='event-form-time'
+              name='event-form-time'
+              value={time}
+              onChange={updateTime}
               required
             />
           </div>
