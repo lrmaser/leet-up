@@ -1,23 +1,29 @@
 .signup-main {
-  align-items: center;
   display: flex;
   flex-direction: column;
-  margin: 0;
-  max-width: 1120px;
+  max-width: 100%;
+  margin: 40px 0 64px 0;
 }
 
 .signup-form-container {
-  align-items: center;
   border: 1px solid rgb(230, 230, 230);
   border-radius: 8px;
   display: flex;
   padding: 32px 32px 60px 32px;
   max-width: 484px;
+  margin: 0 auto;
 }
 
-.signup-headers {}
+.signup-headers {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
 
-.signup-form-contents {}
+.signup-form-contents {
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
 
 .signup-name-container,
 .signup-email-container,
@@ -29,21 +35,56 @@
   margin-bottom: 4px;
 }
 
+.signup-email-container,
+.signup-password-container,
+.signup-confirm-password-container,
+.signup-age-container {
+  margin-top: 24px;
+}
+
+.signup-name-container label,
+.signup-email-container label,
+.signup-password-container label,
+.signup-confirm-password-container label,
+.signup-age-container label {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
 #signup-name,
 #signup-email,
 #signup-password,
 #signup-confirm-password {
   border: 1px solid rgb(230, 230, 230);
   border-radius: 8px;
-  width: 290px;
+  width: 320px;
   height: 22px;
   padding: 8px 12px;
+  font-size: 100%;
+}
+
+.signup-age-input {
+  display: flex;
+  align-items: center;
+}
+
+.signup-age-input input {
+  margin-right: 10px;
+}
+
+.signup-age-input span {
+  font-size: 14px;
+}
+
+#signup-age {
+  height: 16px;
+  width: 16px;
 }
 
 .signup-form-button {
-  height: 32px;
+  height: 45px;
   padding: 8px 12px;
-  width: 320px;
+  width: 346px;
   background-color: #f65858;
   border-color: #f65858;
   border-radius: 8px;
@@ -51,7 +92,8 @@
   padding: 8px 12px;
   margin-top: 24px;
   border: 0;
-  font-weight: 600;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .signup-already-member {
@@ -59,4 +101,10 @@
   height: 24px;
   display: flex;
   justify-content: center;
+}
+
+.signup-already-member span {
+  align-items: center;
+  display: flex;
+  margin-right: 10px;
 }

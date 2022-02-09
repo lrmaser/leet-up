@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import * as sessionActions from '../../store/session';
+import LoginFormModal from '../LoginFormModal';
 import './SignupForm.css';
 
 const SignupFormPage = () => {
@@ -92,21 +93,23 @@ const SignupFormPage = () => {
             </div>
             <div className='signup-age-container'>
               <label htmlFor='signup-age'>Age</label>
-                <input
-                  type='checkbox'
-                  id='signup-age'
-                  name='signup-age'
-                  value={age}
-                  onChange={(e) => setAge(e.target.checked)}
-                  required
-                />
-                <span>I am 18 years of age or older.</span>
+                <div className='signup-age-input'>
+                  <input
+                    type='checkbox'
+                    id='signup-age'
+                    name='signup-age'
+                    value={age}
+                    onChange={(e) => setAge(e.target.checked)}
+                    required
+                  />
+                  <span>I am 18 years of age or older.</span>
+                </div>
             </div>
             <button type='submit' className='signup-form-button'>Sign Up</button>
           </div>
           <div className='signup-already-member'>
             <span>Already a member?</span>
-            <a href='#'>Log In</a>
+            <LoginFormModal />
           </div>
         </form>
       </div>
