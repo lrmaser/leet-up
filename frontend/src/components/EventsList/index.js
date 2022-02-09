@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { getEvents } from '../../store/events';
 import EventDetail from './EventDetail';
+import './EventsList.css';
 
 const EventsList = () => {
   const dispatch = useDispatch();

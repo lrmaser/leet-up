@@ -1,0 +1,11 @@
+.event-list-image-container {
+  height: 125px;
+  width: 162px;
+}
+
+.event-list-image {
+  border-radius: 8px;
+  height: 90px;
+  object-fit: contain;
+  object-position: center;
+}
