@@ -5,13 +5,19 @@ import { createEvent } from '../../store/events';
 
 import './EventForm.css';
 
+const defaultDate = () => {
+  // yyyy-mm-dd
+  const date = new Date().toISOString().slice(0, 10);
+  return date;
+};
+
 const EventFormPage = () => {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
 
   const [ categoryId, setCategoryId ] = useState(); // Default selection
   const [ name, setName ] = useState('');
-  const [ date, setDate ] = useState('2022-02-08'); // Default function, remove hardcode
+  const [ date, setDate ] = useState(`${defaultDate()}`);
   const [ capacity, setCapacity ] = useState(1);
   const [ image, setImage ] = useState('');
   const [ details, setDetails ] = useState('');
