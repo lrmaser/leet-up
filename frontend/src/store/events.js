@@ -94,9 +94,8 @@ export const updateEvent = (event) => async (dispatch) => {
   if (res.ok) {
     const editedEvent = await res.json();
     dispatch(editEvent(editedEvent));
+    return editedEvent;
   }
-
-  return res;
 };
 
 // GET /api/events/:eventId - READ
