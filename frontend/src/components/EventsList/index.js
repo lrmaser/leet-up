@@ -16,6 +16,19 @@ const EventsList = () => {
     dispatch(getEvents());
   }, [dispatch]);
 
+  let eventsList;
+  if (events) {
+    eventsList = (
+      events.map(event => (
+        <EventDetail key={event.id} id={event.id} image={event.image} date={event.date} eventName={event.name} groupName={event.Group.name}/>
+      ))
+    );
+  } else {
+    eventsList = (
+      <div>There are currently no upcoming events!</div>
+    );
+  }
+
   return (
     <main className='event-list-main'>
       <div className='event-list-container'>
@@ -24,9 +37,7 @@ const EventsList = () => {
           <Link to='/groups'>Groups</Link>
         </div>
         <div className='event-list-contents'>
-          {events.map(event => (
-            <EventDetail key={event.id} id={event.id} image={event.image} date={event.date} eventName={event.name} groupName={event.Group.name}/>
-          ))}
+          {eventsList}
         </div>
       </div>
     </main>

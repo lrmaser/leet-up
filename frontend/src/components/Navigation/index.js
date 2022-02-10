@@ -32,7 +32,7 @@ const Navigation = ({ isLoaded }) => {
       <li>
         <div className='nav-container'>
           <div className='nav-logo-browse'>
-            <NavLink class='nav-logo' exact to='/'>
+            <NavLink className='nav-logo' exact to='/'>
               <img src='/images/LeetUpLogo.png' alt='LeetUp Logo'></img>
             </NavLink>
             <NavLink activeClassName='nav-selected' exact to='/events'>Browse Events</NavLink>
