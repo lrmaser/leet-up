@@ -44,13 +44,16 @@ router.put('/:eventId(\\d+)', asyncHandler(async (req, res) => {
 
   if (!event) throw new Error('Cannot find event');
 
-  await Event.update({
-    where: {
-      id: event.id
+  await Event.update(
+    event,
+    {
+      where: {
+        id: event.id
+      }
     }
-  });
+  );
 
-  return res.json(event.id);
+  return res.json(event);
 }));
 
 // GET /api/events/:eventId - READ
