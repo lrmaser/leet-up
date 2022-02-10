@@ -13,8 +13,8 @@ const Navigation = ({ isLoaded }) => {
   if (sessionUser) {
     sessionLinks = (
       <>
-        <NavLink to='/groups/new'>Start a New Group</NavLink>
-        <NavLink to='/events/new'>Create an Event</NavLink>
+        <NavLink activeClassName='nav-selected' to='/groups/new'>Start a New Group</NavLink>
+        <NavLink activeClassName='nav-selected' to='/events/new'>Create an Event</NavLink>
         <ProfileButton user={sessionUser} />
       </>
     );
@@ -22,7 +22,7 @@ const Navigation = ({ isLoaded }) => {
     sessionLinks = (
       <>
         <LoginFormModal />
-        <NavLink to='/signup'>Sign Up</NavLink>
+        <NavLink activeClassName='nav-selected' to='/signup'>Sign Up</NavLink>
       </>
     );
   }
@@ -32,11 +32,11 @@ const Navigation = ({ isLoaded }) => {
       <li>
         <div className='nav-container'>
           <div className='nav-logo-browse'>
-            <NavLink exact to='/'>
+            <NavLink class='nav-logo' exact to='/'>
               <img src='/images/LeetUpLogo.png' alt='LeetUp Logo'></img>
             </NavLink>
-            <NavLink to='/events'>Browse Events</NavLink>
-            <NavLink to='/groups'>Browse Groups</NavLink>
+            <NavLink activeClassName='nav-selected' exact to='/events'>Browse Events</NavLink>
+            <NavLink activeClassName='nav-selected' exact to='/groups'>Browse Groups</NavLink>
           </div>
           <div className='nav-links'>
             {isLoaded && sessionLinks}
