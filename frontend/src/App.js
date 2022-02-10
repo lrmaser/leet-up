@@ -1,21 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
 import * as sessionActions from './store/session';
+import { getEvents } from './store/events';
 import Navigation from './components/Navigation';
 import SignupFormPage from './components/SignupFormPage';
 import EventsList from './components/EventsList';
 import EventDetailPage from './components/EventDetailPage';
 import EventFormPage from './components/EventFormPage';
+import EditEventForm from './components/EditEventForm';
 
 function App() {
   const dispatch = useDispatch();
+
+  const events = useSelector(state => state.events.events);
+
   const [ isLoaded, setIsLoaded ] = useState(false);
 
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
+
+  if (!Object.keys(events).length) {
+    dispatch(getEvents());
+  }
 
   return (
     <>
@@ -30,6 +39,9 @@ function App() {
           </Route>
           <Route path='/events/new'>
             <EventFormPage />
+          </Route>
+          <Route path='/events/:eventId/edit'>
+            <EditEventForm events={events} />
           </Route>
           <Route path='/events/:eventId'>
             <EventDetailPage />

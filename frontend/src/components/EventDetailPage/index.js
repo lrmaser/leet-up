@@ -34,14 +34,12 @@ const EventDetailPage = () => {
 
   const handleEdit = async (e) => {
     e.preventDefault();
-
+    history.push(`/events/${eventId}/edit`);
   };
 
   const handleDelete = async (e) => {
     e.preventDefault();
-
     dispatch(deleteEvent(eventId));
-
     history.push('/events');
   };
 
@@ -57,7 +55,7 @@ const EventDetailPage = () => {
   if (sessionUser && sessionUser.id === event.hostId) {
     eventButtons = (
       <div className='event-details-buttons'>
-        <button type='button'>Edit</button>
+        <button type='button' onClick={handleEdit}>Edit</button>
         <button type='button' onClick={handleDelete}>Delete</button>
       </div>
     );

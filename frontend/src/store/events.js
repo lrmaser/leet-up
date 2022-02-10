@@ -135,8 +135,11 @@ const eventReducer = (state = initialState, action) => {
       delete newState[action.eventId];
       return newState;
     case EDIT_EVENT:
-      newState = {...state};
-      return;
+      newState = {
+        ...state,
+        [action.event.id]: action.event
+      };
+      return newState;
     case SELECTED_EVENT:
       newState = {
         ...state,

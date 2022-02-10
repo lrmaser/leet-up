@@ -1,29 +1,42 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
-import { createEvent } from '../../store/events';
+import { updateEvent } from '../../store/events';
 
-import './EventForm.css';
+import './EditEventForm.css';
 
-const defaultDate = () => {
-  // yyyy-mm-dd
-  const date = new Date().toISOString().slice(0, 10);
-  return date;
+// Format date in yyyy-mm-dd
+const formatDate = (date) => {
+  const formattedDate = new Date(date).toISOString().slice(0, 10);
+  return formattedDate;
 };
 
-const EventFormPage = () => {
-  const dispatch = useDispatch();
-  const history = useHistory();
+// Format time in hh:mm
+const formatTime = (time) => {
+  const timeString = new Date(time).toTimeString();
+  const timeStringSplit = timeString.split(':');
+  const formattedTime = `${timeStringSplit[0]}:${timeStringSplit[1]}`;
+  return formattedTime;
+};
+
+const EditEventForm = ({ events }) => {
+  const { eventId } = useParams();
+  const event = events[eventId];
+
   const sessionUser = useSelector(state => state.session.user);
 
-  const [ categoryId, setCategoryId ] = useState(); // Default selection
-  const [ name, setName ] = useState('');
-  const [ date, setDate ] = useState(`${defaultDate()}`);
-  const [ time, setTime ] = useState('09:00');
-  const [ capacity, setCapacity ] = useState(1);
-  const [ image, setImage ] = useState('');
-  const [ details, setDetails ] = useState('');
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  // Set intitial states
+  const [ categoryId, setCategoryId ] = useState(event.categoryId);
+  const [ name, setName ] = useState(event.name);
+  const [ date, setDate ] = useState(formatDate(event.date));
+  const [ time, setTime ] = useState(formatTime(event.date));
+  const [ capacity, setCapacity ] = useState(event.capacity);
+  const [ image, setImage ] = useState(event.image);
+  const [ details, setDetails ] = useState(event.details);
 
   const updateCategoryId = (e) => setCategoryId(e.target.value);
   const updateName = (e) => setName(e.target.value);
@@ -37,6 +50,7 @@ const EventFormPage = () => {
     e.preventDefault();
 
     const payload = {
+      ...event,
       hostId: sessionUser.id,
       categoryId,
       name,
@@ -46,21 +60,22 @@ const EventFormPage = () => {
       details
     };
 
-    let createdEvent = await dispatch(createEvent(payload));
+    let updatedEvent = await dispatch(updateEvent(payload));
 
-    if (createdEvent) {
+    if (updatedEvent) {
       history.push('/events');
     }
 
     // Error handling
-    // Add Cancel option
+    // Add cancel option
   };
 
+  // Change class names?
   return (
     <main className='event-form-main'>
       <div className='event-form-container'>
         <form onSubmit={handleSubmit}>
-          <h2>Create an Event</h2>
+          <h2>Edit an Event</h2>
           <div className='event-form-group-container'>
             <label htmlFor='event-form-group'>Hosting Group</label>
             <select
@@ -145,4 +160,4 @@ const EventFormPage = () => {
   );
 };
 
-export default EventFormPage;
+export default EditEventForm;

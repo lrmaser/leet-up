@@ -14,7 +14,7 @@ const Navigation = ({ isLoaded }) => {
     sessionLinks = (
       <>
         <NavLink to='/groups/new'>Start a New Group</NavLink>
-        <NavLink to='events/new'>Create an Event</NavLink>
+        <NavLink to='/events/new'>Create an Event</NavLink>
         <ProfileButton user={sessionUser} />
       </>
     );
