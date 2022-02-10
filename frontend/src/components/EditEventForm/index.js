@@ -63,7 +63,6 @@ const EditEventForm = ({ events }) => {
     let updatedEvent = await dispatch(updateEvent(payload));
 
     if (updatedEvent) {
-      console.log('updated event', updatedEvent);
       history.push(`/events/${eventId}`);
     }
 

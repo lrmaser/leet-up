@@ -44,16 +44,9 @@ router.put('/:eventId(\\d+)', asyncHandler(async (req, res) => {
 
   if (!event) throw new Error('Cannot find event');
 
-  await Event.update(
-    event,
-    {
-      where: {
-        id: event.id
-      }
-    }
-  );
+  const updatedEvent = await event.update(req.body);
 
-  return res.json(event);
+  return res.json(updatedEvent);
 }));
 
 // GET /api/events/:eventId - READ
