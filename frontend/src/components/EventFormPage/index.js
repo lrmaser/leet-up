@@ -72,7 +72,7 @@ const EventFormPage = () => {
             >
               {/* List user's groups, remove hard-coded value */}
               <option value=''>Please choose an option</option>
-              <option value='2'>group2</option>
+              <option value='1'>Group 1</option>
             </select>
           </div>
           <div className='event-form-name-container'>
