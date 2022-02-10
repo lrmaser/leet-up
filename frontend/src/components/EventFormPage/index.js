@@ -136,6 +136,7 @@ const EventFormPage = () => {
               name='event-form-details'
               value={details}
               onChange={updateDetails}
+              rows='8'
             />
           </div>
           <button type='submit' className='event-form-button'>Submit</button>
