@@ -75,11 +75,12 @@ const EventDetailPage = () => {
           <h1>{event.name}</h1>
           <div className='event-details-host-container'>
             <div className='event-details-host-icon'>
-              {/* <img></img> */}
+              {/* Icon not working for some reason? */}
+              <i className="fa-solid fa-face-smile"></i>
             </div>
             <div className='event-details-host-info'>
               <div>Hosted By</div>
-              <div>{event.hostId}</div>
+              <div className='event-details-host-name'>{event.hostId}</div>
             </div>
           </div>
         </div>
@@ -91,8 +92,10 @@ const EventDetailPage = () => {
               <div className='event-details-image'>
                 <img src={event.image} alt='Event'></img>
               </div>
-              <div className='event-details-details-header'>Details</div>
-              <div className='event-details-details'>{event.details}</div>
+              <div className='event-details-details-container'>
+                <div className='event-details-details-header'>Details</div>
+                <div className='event-details-details'>{event.details}</div>
+              </div>
             </div>
             <div className='event-details-attendees-container'>
               <div className='event-details-attendees-header'>

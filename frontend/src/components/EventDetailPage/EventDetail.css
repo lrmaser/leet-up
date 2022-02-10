@@ -1,4 +1,107 @@
+.event-details-main {}
+
+.event-details-top {
+  border-bottom: 1px solid rgb(230, 230, 230);
+  height: 150px;
+  padding: 24px 20px;
+}
+
+.event-details-headers {
+  height: 150px;
+  margin: 0 90px;
+}
+
+.event-details-headers span {
+  color: rgb(117 117 117);
+  font-size: 16px;
+}
+
+.event-details-headers h1 {
+  height: 58px;
+}
+
+.event-details-host-container {
+  display: flex;
+  flex-direction: row;
+  height: 48px;
+  margin-top: 20px;
+}
+
+.event-details-host-icon {
+  border-radius: 50%;
+  height: 48px;
+  width: 48px;
+}
+
+.event-details-host-info {
+  font-size: 16px;
+  margin-left: 24px;
+}
+
+.event-details-host-name {
+  font-weight: bold;
+}
+
+.event-details-bottom {
+  background-color: rgb(246 247 248);
+  border-top: 1px solid rgb(230, 230, 230);
+  height: 1250px;
+  padding: 0 20px 24px 20px;
+}
+
+.event-details-left-container {}
+
+.event-details-left {}
+
+.event-details-image-details {}
+
+.event-details-image {}
+
 .event-details-image img {
-  height: 200px;
-  width: 300px;
+  height: 370px;
+  margin-top: 32px;
+  object-fit: cover;
+  width: 660px;
+}
+
+.event-details-details-container {
+  height: 248px;
+  margin-top: 20px;
+  width: 660px;
+}
+
+.event-details-details-header {}
+
+.event-details-details {}
+
+.event-details-attendees-container {
+  height: 248px;
+  margin-top: 20px;
+  width: 660px;
+}
+
+.event-details-attendees-header {}
+
+.event-details-attendees {}
+
+.event-details-right-container {}
+
+.event-details-right {}
+
+.event-details-group {
+  height: 56px;
+  padding: 24px;
+  width: 298px;
+}
+
+.event-details-buttons button {
+  background-color: #f65858;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  height: 45px;
+  padding: 10px 32px;
+  width: 298px;
 }
