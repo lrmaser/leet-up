@@ -31,10 +31,12 @@ const Navigation = ({ isLoaded }) => {
     <ul className='nav-ul'>
       <li>
         <div className='nav-container'>
-          <div className='nav-logo'>
+          <div className='nav-logo-browse'>
             <NavLink exact to='/'>
               <img src='/images/LeetUpLogo.png' alt='LeetUp Logo'></img>
             </NavLink>
+            <NavLink to='/events'>Browse Events</NavLink>
+            <NavLink to='/groups'>Browse Groups</NavLink>
           </div>
           <div className='nav-links'>
             {isLoaded && sessionLinks}
