@@ -29,7 +29,6 @@ const EditEventForm = ({ events }) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  // Set intitial states
   const [ categoryId, setCategoryId ] = useState(event.categoryId);
   const [ name, setName ] = useState(event.name);
   const [ date, setDate ] = useState(formatDate(event.date));
@@ -70,7 +69,6 @@ const EditEventForm = ({ events }) => {
     // Add cancel option
   };
 
-  // Change class names?
   return (
     <main className='event-form-main'>
       <div className='event-form-container'>

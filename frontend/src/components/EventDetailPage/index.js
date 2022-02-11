@@ -81,7 +81,7 @@ const EventDetailPage = () => {
             </div>
             <div className='event-details-host-info'>
               <div>Hosted By</div>
-              <div className='event-details-host-name'>{event.hostId}</div>
+              <div className='event-details-host-name'>{event.User.username}</div>
             </div>
           </div>
         </div>

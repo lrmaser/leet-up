@@ -103,8 +103,8 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'userId'
     };
 
-    User.belongsToMany(models.Event, columnMappingRsvp);
     User.hasMany(models.Event, { foreignKey: 'hostId' });
+    User.belongsToMany(models.Event, columnMappingRsvp);
     User.belongsToMany(models.Group, columnMappingUserGroup);
   };
 

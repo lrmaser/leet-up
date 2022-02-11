@@ -16,8 +16,6 @@ const EventsList = () => {
     dispatch(getEvents());
   }, [dispatch]);
 
-
-
   let eventsList;
   if (events) {
     eventsList = (

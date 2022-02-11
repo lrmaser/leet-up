@@ -32,8 +32,8 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'eventId'
     };
 
-    Event.belongsToMany(models.User, columnMapping);
     Event.belongsTo(models.User, { foreignKey: 'hostId' });
+    Event.belongsToMany(models.User, columnMapping);
     Event.belongsTo(models.Group, { foreignKey: 'categoryId' });
   };
   return Event;

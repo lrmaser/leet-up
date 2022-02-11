@@ -17,7 +17,7 @@ const EventFormPage = () => {
   const history = useHistory();
   const sessionUser = useSelector(state => state.session.user);
 
-  const [ categoryId, setCategoryId ] = useState(); // Default selection
+  const [ categoryId, setCategoryId ] = useState('');
   const [ name, setName ] = useState('');
   const [ date, setDate ] = useState(`${defaultDate()}`);
   const [ time, setTime ] = useState('09:00');

@@ -1,7 +1,7 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 
-const { Event, Group, Rsvp, User, UserGroup } = require('../../db/models');
+const { Event, Group, User } = require('../../db/models');
 
 const router = express.Router();
 
@@ -58,8 +58,6 @@ router.get('/:eventId(\\d+)', asyncHandler(async (req, res) => {
       include: [ User, Group ]
     }
   );
-
-  console.log('backend', event)
 
   return res.json(event);
 }));
