@@ -1,5 +1,3 @@
-.event-details-main {}
-
 .event-details-top {
   border-bottom: 1px solid rgb(230, 230, 230);
   height: 150px;
@@ -17,18 +15,24 @@
 }
 
 .event-details-headers h1 {
+  font-size: 36px;
   height: 58px;
+  margin-bottom: 0;
 }
 
 .event-details-host-container {
   display: flex;
   flex-direction: row;
   height: 48px;
-  margin-top: 20px;
+  margin: 0;
 }
 
 .event-details-host-icon {
+  align-items: center;
   border-radius: 50%;
+  display: flex;
+  font-size: 48px;
+  justify-content: center;
   height: 48px;
   width: 48px;
 }
@@ -49,13 +53,10 @@
   padding: 0 20px 24px 20px;
 }
 
-.event-details-left-container {}
-
-.event-details-left {}
-
-.event-details-image-details {}
-
-.event-details-image {}
+.event-details-bottom-contents {
+  display: flex;
+  margin: 0 90px;
+}
 
 .event-details-image img {
   height: 370px;
@@ -70,9 +71,16 @@
   width: 660px;
 }
 
-.event-details-details-header {}
+.event-details-details-header {
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
 
-.event-details-details {}
+.event-details-details {
+  margin-bottom: 16px;
+  margin-top: 0;
+}
 
 .event-details-attendees-container {
   height: 248px;
@@ -80,13 +88,21 @@
   width: 660px;
 }
 
-.event-details-attendees-header {}
+.event-details-attendees-header {
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
 
-.event-details-attendees {}
+.event-details-right-container {
+  margin-left: 112px;
+  margin-top: 32px;
+}
 
-.event-details-right-container {}
-
-.event-details-right {}
+.event-details-right {
+  position: sticky;
+  top: 6rem;
+}
 
 .event-details-group {
   height: 56px;
@@ -102,6 +118,7 @@
   font-size: 20px;
   font-weight: bold;
   height: 45px;
+  margin-top: 20px;
   padding: 10px 32px;
-  width: 298px;
+  width: 100%;
 }

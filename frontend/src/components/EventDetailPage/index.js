@@ -75,8 +75,7 @@ const EventDetailPage = () => {
           <h1>{event.name}</h1>
           <div className='event-details-host-container'>
             <div className='event-details-host-icon'>
-              {/* Icon not working for some reason? */}
-              <i className="fa-solid fa-face-smile"></i>
+              <i class="fas fa-user-circle"></i>
             </div>
             <div className='event-details-host-info'>
               <div>Hosted By</div>
@@ -86,23 +85,26 @@ const EventDetailPage = () => {
         </div>
       </div>
       <div className='event-details-bottom'>
-        <div className='event-details-left-container'>
-          <div className='event-details-left'>
-            <div className='event-details-image-details'>
-              <div className='event-details-image'>
-                <img src={event.image} alt='Event'></img>
+        <div className='event-details-bottom-contents'>
+          <div className='event-details-left-container'>
+            <div className='event-details-left'>
+              <div className='event-details-image-details'>
+                <div className='event-details-image'>
+                  <img src={event.image} alt='Event'></img>
+                </div>
+                <div className='event-details-details-container'>
+                  <h2 className='event-details-details-header'>Details</h2>
+                  <p className='event-details-details'>{event.details}</p>
+                </div>
               </div>
-              <div className='event-details-details-container'>
-                <div className='event-details-details-header'>Details</div>
-                <div className='event-details-details'>{event.details}</div>
-              </div>
-            </div>
-            <div className='event-details-attendees-container'>
-              <div className='event-details-attendees-header'>
-                {/* Replace hardcoded attendees */}
-                Attendees (0)</div>
-              <div className='event-details-attendees'>
-                {/* Component for attendees? */}
+              <div className='event-details-attendees-container'>
+                <h2 className='event-details-attendees-header'>
+                  {/* Replace hardcoded attendees */}
+                  Attendees (0)
+                </h2>
+                <div className='event-details-attendees'>
+                  {/* Component for attendees? */}
+                </div>
               </div>
             </div>
           </div>
