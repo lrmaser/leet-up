@@ -105,6 +105,8 @@
 }
 
 .event-details-group {
+  background-color: rgb(255 255 255);
+  border-radius: 8px;
   height: 56px;
   padding: 24px;
   width: 298px;

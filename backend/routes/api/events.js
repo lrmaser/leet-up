@@ -55,9 +55,11 @@ router.get('/:eventId(\\d+)', asyncHandler(async (req, res) => {
   const event = await Event.findByPk(
     eventId,
     {
-      include: Group
+      include: [ User, Group ]
     }
   );
+
+  console.log('backend', event)
 
   return res.json(event);
 }));

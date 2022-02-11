@@ -26,6 +26,8 @@ const EventDetailPage = () => {
   const event = useSelector(state => state.events[eventId]);
   const sessionUser = useSelector(state => state.session.user);
 
+  console.log('event in component', event)
+
   const dispatch = useDispatch();
 
   useEffect(() => {
