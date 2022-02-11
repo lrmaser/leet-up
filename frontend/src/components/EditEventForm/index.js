@@ -48,6 +48,7 @@ const EditEventForm = ({ events }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrors([]);
 
     const payload = {
       ...event,
@@ -60,13 +61,13 @@ const EditEventForm = ({ events }) => {
       details
     };
 
-    let updatedEvent = await dispatch(updateEvent(payload));
+    return dispatch(updateEvent(payload))
+      .then(() => history.push(`/events/${eventId}`))
+      .catch(async (res) => {
+        const data = await res.json();
+        if (data && data.errors) setErrors(data.errors);
+      });
 
-    if (updatedEvent) {
-      history.push(`/events/${eventId}`);
-    }
-
-    // Error handling
     // Add cancel option
   };
 
@@ -75,6 +76,9 @@ const EditEventForm = ({ events }) => {
       <div className='event-form-container'>
         <form onSubmit={handleSubmit}>
           <h2>Edit an Event</h2>
+          <ul className='event-form-errors'>
+            {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+          </ul>
           <div className='event-form-group-container'>
             <label htmlFor='event-form-group'>Hosting Group</label>
             <select
