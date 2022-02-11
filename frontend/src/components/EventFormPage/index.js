@@ -24,6 +24,7 @@ const EventFormPage = () => {
   const [ capacity, setCapacity ] = useState(1);
   const [ image, setImage ] = useState('');
   const [ details, setDetails ] = useState('');
+  const [ errors, setErrors ] = useState([]);
 
   const updateCategoryId = (e) => setCategoryId(e.target.value);
   const updateName = (e) => setName(e.target.value);
@@ -35,6 +36,7 @@ const EventFormPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrors([]);
 
     const payload = {
       hostId: sessionUser.id,
@@ -46,13 +48,15 @@ const EventFormPage = () => {
       details
     };
 
-    let createdEvent = await dispatch(createEvent(payload));
+    return dispatch(createEvent(payload))
+      // .then(history.push('/events'))
+      .catch(async (res) => {
+        const data = await res.json();
+        if (data && data.errors) setErrors(data.errors);
+      });
 
-    if (createdEvent) {
-      history.push('/events');
-    }
+    // if (createdEvent) history.push('/events');
 
-    // Error handling
     // Add Cancel option
   };
 
@@ -61,6 +65,9 @@ const EventFormPage = () => {
       <div className='event-form-container'>
         <form onSubmit={handleSubmit}>
           <h2>Create an Event</h2>
+          <ul className='event-form-errors'>
+            {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+          </ul>
           <div className='event-form-group-container'>
             <label htmlFor='event-form-group'>Hosting Group</label>
             <select
@@ -129,6 +136,7 @@ const EventFormPage = () => {
               name='event-form-image'
               value={image}
               onChange={updateImage}
+              placeholder='Paste copied image address here'
             />
           </div>
           <div className='event-form-details-container'>

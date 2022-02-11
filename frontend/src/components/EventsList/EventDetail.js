@@ -19,7 +19,7 @@ const EventDetail = ({ id, image, date, eventName, groupName }) => {
     <Link to={`/events/${id}`}>
       <div className='event-list-detail'>
         <div className='event-list-image-container'>
-          <img className='event-list-image' src={image} alt='Event'></img>
+          <img className='event-list-image' src={image.length > 0 ? image : 'https://st4.depositphotos.com/14953852/24787/v/600/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg'} alt='Event'></img>
         </div>
         <div className='event-list-info'>
           <div className='event-list-date'>{`${formatDate(date).toUpperCase()} @ ${formatTime(date).toUpperCase()}`}</div>

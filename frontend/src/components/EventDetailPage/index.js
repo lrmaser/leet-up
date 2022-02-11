@@ -26,8 +26,6 @@ const EventDetailPage = () => {
   const event = useSelector(state => state.events[eventId]);
   const sessionUser = useSelector(state => state.session.user);
 
-  console.log('event in component', event)
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -69,6 +67,8 @@ const EventDetailPage = () => {
     );
   }
 
+  console.log(event.image)
+
   return (
     <main className='event-details-main'>
       <div className='event-details-top'>
@@ -92,7 +92,7 @@ const EventDetailPage = () => {
             <div className='event-details-left'>
               <div className='event-details-image-details'>
                 <div className='event-details-image'>
-                  <img src={event.image} alt='Event'></img>
+                  <img src={event.image.length > 0 ? event.image : 'https://st4.depositphotos.com/14953852/24787/v/600/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg'} alt='Event'></img>
                 </div>
                 <div className='event-details-details-container'>
                   <h2 className='event-details-details-header'>Details</h2>

@@ -36,6 +36,7 @@ const EditEventForm = ({ events }) => {
   const [ capacity, setCapacity ] = useState(event.capacity);
   const [ image, setImage ] = useState(event.image);
   const [ details, setDetails ] = useState(event.details);
+  const [ errors, setErrors ] = useState([]);
 
   const updateCategoryId = (e) => setCategoryId(e.target.value);
   const updateName = (e) => setName(e.target.value);
@@ -142,6 +143,7 @@ const EditEventForm = ({ events }) => {
               name='event-form-image'
               value={image}
               onChange={updateImage}
+              placeholder='Paste copied image address here'
             />
           </div>
           <div className='event-form-details-container'>
