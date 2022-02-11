@@ -1,11 +1,93 @@
+.event-list-main {
+  margin-top: 40px;
+}
+
+.event-list-container {
+  margin: 0 200px;
+  padding-bottom: 64px;
+}
+
+.event-list-headers {
+  border-bottom: 1px solid rgb(217 217 217);
+  height: 32px;
+  padding: 12px 0 22px 0;
+}
+
+.event-list-headers a {
+  color: rgb(0 130 148);
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 16px;
+  padding-bottom: 4px;
+  text-decoration: none;
+}
+
+.event-list-headers a:hover {
+  border-bottom: 4px solid rgb(0 130 148);
+}
+
+.event-list-contents a {
+  text-decoration: none;
+}
+
+.event-list-detail {
+  border-bottom: 1px solid rgb(217 217 217);
+  display: flex;
+  height: 162px;
+  padding-bottom: 20px;
+  padding-top: 16px;
+  width: 640px;
+}
+
 .event-list-image-container {
   height: 125px;
+  margin-right: 12px;
   width: 162px;
 }
 
 .event-list-image {
   border-radius: 8px;
   height: 90px;
-  object-fit: contain;
-  object-position: center;
+  object-fit: cover;
+  width: 100%;
+}
+
+.event-list-info {
+  width: 466px;
+}
+
+.event-list-date {
+  align-items: center;
+  color: rgb(135 116 87);
+  display: flex;
+  font-size: 14px;
+  font-weight: bold;
+  height: 28px;
+}
+
+.event-list-event-name {
+  align-items: center;
+  color: rgb(33 33 33);
+  display: flex;
+  font-size: 16px;
+  font-weight: bold;
+  height: 24px;
+  margin: 0;
+  padding-bottom: 4px;
+}
+
+.event-list-group-name {
+  align-items: center;
+  color: rgb(117 117 117);
+  display: flex;
+  font-size: 14px;
+  height: 20px;
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.event-list-attendees {
+  color: rgb(117 117 117);
+  font-size: 14px;
+  height: 20px;
 }

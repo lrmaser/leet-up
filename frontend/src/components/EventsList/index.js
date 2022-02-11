@@ -16,6 +16,8 @@ const EventsList = () => {
     dispatch(getEvents());
   }, [dispatch]);
 
+
+
   let eventsList;
   if (events) {
     eventsList = (
@@ -25,7 +27,9 @@ const EventsList = () => {
     );
   } else {
     eventsList = (
-      <div>There are currently no upcoming events!</div>
+      <div>
+        <span>There are currently no upcoming events!</span>
+      </div>
     );
   }
 
