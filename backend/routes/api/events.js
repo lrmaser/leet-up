@@ -52,7 +52,12 @@ router.put('/:eventId(\\d+)', asyncHandler(async (req, res) => {
 // GET /api/events/:eventId - READ
 router.get('/:eventId(\\d+)', asyncHandler(async (req, res) => {
   const eventId = req.params.eventId;
-  const event = await Event.findByPk(eventId);
+  const event = await Event.findByPk(
+    eventId,
+    {
+      include: Group
+    }
+  );
 
   return res.json(event);
 }));

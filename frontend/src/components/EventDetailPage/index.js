@@ -47,7 +47,6 @@ const EventDetailPage = () => {
     e.preventDefault();
 
   };
-  console.log(event)
 
   if (!event) return null;
 
@@ -112,8 +111,7 @@ const EventDetailPage = () => {
           <div className='event-details-right-container'>
             <div className='event-details-right'>
               <div className='event-details-group'>
-                {event.categoryId}
-                {/* Event host's group name */}
+                {event.Group.name}
               </div>
               {eventButtons}
             </div>
