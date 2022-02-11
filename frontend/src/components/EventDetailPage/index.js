@@ -47,6 +47,7 @@ const EventDetailPage = () => {
     e.preventDefault();
 
   };
+  console.log(event)
 
   if (!event) return null;
 
@@ -75,7 +76,7 @@ const EventDetailPage = () => {
           <h1>{event.name}</h1>
           <div className='event-details-host-container'>
             <div className='event-details-host-icon'>
-              <i class="fas fa-user-circle"></i>
+              <i className="fas fa-user-circle"></i>
             </div>
             <div className='event-details-host-info'>
               <div>Hosted By</div>
