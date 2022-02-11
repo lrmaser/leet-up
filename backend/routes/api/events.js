@@ -1,6 +1,6 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
-const { check } = require('express-validator');
+const { check, body } = require('express-validator');
 
 const { handleValidationErrors } = require('../../utils/validation');
 const { Event, Group, User } = require('../../db/models');
@@ -24,7 +24,7 @@ const validateEvent = [
     .isInt({ min: 1 })
     .withMessage('Capacity must be more than 0.'),
   check('image')
-    .exists({ checkFalsy: false })
+    .if(body('image').notEmpty())
     .isURL({ require_protocol: false, require_host: false })
     .withMessage('Please provide a valid image URL.'),
   handleValidationErrors

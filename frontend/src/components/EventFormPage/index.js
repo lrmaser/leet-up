@@ -49,13 +49,11 @@ const EventFormPage = () => {
     };
 
     return dispatch(createEvent(payload))
-      // .then(history.push('/events'))
+      .then(() => history.push('/events'))
       .catch(async (res) => {
         const data = await res.json();
         if (data && data.errors) setErrors(data.errors);
       });
-
-    // if (createdEvent) history.push('/events');
 
     // Add Cancel option
   };
