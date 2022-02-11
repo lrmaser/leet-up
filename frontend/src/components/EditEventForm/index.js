@@ -87,7 +87,7 @@ const EditEventForm = ({ events }) => {
             >
               {/* List user's groups, remove hard-coded value */}
               <option value=''>Please choose an option</option>
-              <option value='2'>group2</option>
+              <option value='1'>Group 1</option>
             </select>
           </div>
           <div className='event-form-name-container'>
@@ -151,6 +151,7 @@ const EditEventForm = ({ events }) => {
               name='event-form-details'
               value={details}
               onChange={updateDetails}
+              rows='8'
             />
           </div>
           <button type='submit' className='event-form-button'>Submit</button>
