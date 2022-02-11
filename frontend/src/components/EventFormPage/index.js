@@ -86,27 +86,29 @@ const EventFormPage = () => {
               required
             />
           </div>
-          <div className='event-form-date-container'>
-            <label htmlFor='event-form-date'>Event Date</label>
-            <input
-              type='date'
-              id='event-form-date'
-              name='event-form-date'
-              value={date}
-              onChange={updateDate}
-              required
-            />
-          </div>
-          <div className='event-form-time-container'>
-            <label htmlFor='event-form-time'>Event Time</label>
-            <input
-              type='time'
-              id='event-form-time'
-              name='event-form-time'
-              value={time}
-              onChange={updateTime}
-              required
-            />
+          <div className='event-form-date-and-time'>
+            <div className='event-form-date-container'>
+              <label htmlFor='event-form-date'>Event Date</label>
+              <input
+                type='date'
+                id='event-form-date'
+                name='event-form-date'
+                value={date}
+                onChange={updateDate}
+                required
+              />
+            </div>
+            <div className='event-form-time-container'>
+              <label htmlFor='event-form-time'>Event Time</label>
+              <input
+                type='time'
+                id='event-form-time'
+                name='event-form-time'
+                value={time}
+                onChange={updateTime}
+                required
+              />
+            </div>
           </div>
           <div className='event-form-capacity-container'>
             <label htmlFor='event-form-capacity'>Capacity</label>

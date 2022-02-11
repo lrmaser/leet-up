@@ -9,9 +9,9 @@
   border: 1px solid rgb(230, 230, 230);
   border-radius: 8px;
   display: flex;
-  margin: 0 400px;
-  max-width: 484px;
+  margin: 0 auto;
   padding: 32px 32px 60px 32px;
+  width: 484px;
 }
 
 .event-form-container form {
@@ -22,6 +22,8 @@
 .event-form-container h2 {
   display: flex;
   justify-content: center;
+  margin-bottom: 40px;
+  margin-top: 0;
 }
 
 .event-form-group-container,
@@ -68,6 +70,16 @@
   font-size: 100%;
   padding: 8px 12px;
   width: auto;
+}
+
+.event-form-date-container,
+.event-form-time-container {
+  width: 240px;
+}
+
+.event-form-date-and-time {
+  display: flex;
+  justify-content: space-between;
 }
 
 .event-form-button {
