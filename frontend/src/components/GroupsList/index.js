@@ -17,6 +17,33 @@ const GroupsList = () => {
   }, [dispatch]);
 
   let groupsList;
+  if (groups.length > 0) {
+    groupsList = (
+      groups.map(group => (
+        <GroupDetail key={group.id} id={group.id} name={group.name} details={group.details}/>
+      ))
+    );
+  } else {
+    groupsList = (
+      <div className='group-list-no-groups'>
+        <span>There are currently no groups!</span>
+      </div>
+    );
+  }
+
+  return (
+    <main className='group-list-main'>
+      <div className='group-list-container'>
+        <div className='group-list-headers'>
+          <Link to='/events'>Events</Link>
+          <Link to='/groups'>Groups</Link>
+        </div>
+        <div className='group-list-contents'>
+          {groupsList}
+        </div>
+      </div>
+    </main>
+  );
 };
 
 export default GroupsList;

@@ -11,6 +11,7 @@ import EventsList from './components/EventsList';
 import EventDetailPage from './components/EventDetailPage';
 import EventFormPage from './components/EventFormPage';
 import EditEventForm from './components/EditEventForm';
+import GroupsList from './components/GroupsList';
 
 function App() {
   const dispatch = useDispatch();
@@ -45,6 +46,9 @@ function App() {
           </Route>
           <Route path='/events/:eventId'>
             <EventDetailPage />
+          </Route>
+          <Route exact path='/groups'>
+            <GroupsList />
           </Route>
           <Route>
             404 Not Found!
