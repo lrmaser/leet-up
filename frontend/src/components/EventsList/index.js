@@ -17,7 +17,7 @@ const EventsList = () => {
   }, [dispatch]);
 
   let eventsList;
-  if (events) {
+  if (events.length > 0) {
     eventsList = (
       events.map(event => (
         <EventDetail key={event.id} id={event.id} image={event.image} date={event.date} eventName={event.name} groupName={event.Group.name}/>
@@ -25,7 +25,7 @@ const EventsList = () => {
     );
   } else {
     eventsList = (
-      <div>
+      <div className='event-list-no-events'>
         <span>There are currently no upcoming events!</span>
       </div>
     );

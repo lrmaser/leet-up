@@ -86,7 +86,7 @@ export const deleteGroup = (groupId) => async (dispatch) => {
 
 // PUT /api/groups/:groupId - UPDATE
 export const updateGroup = (group) => async (dispatch) => {
-  const res = await csrfFetch(`/api/groups/${groupId}`, {
+  const res = await csrfFetch(`/api/groups/${group.id}`, {
     method: 'PUT',
     body: JSON.stringify(group)
   });
