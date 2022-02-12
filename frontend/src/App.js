@@ -16,6 +16,7 @@ import GroupsList from './components/GroupsList';
 import GroupDetailPage from './components/GroupDetailPage';
 import GroupFormPage from './components/GroupFormPage';
 import EditGroupForm from './components/EditGroupForm';
+import Footer from './components/Footer';
 
 function App() {
   const dispatch = useDispatch();
@@ -34,54 +35,58 @@ function App() {
 
   return (
     <>
-      <Navigation isLoaded={isLoaded} />
-      {isLoaded && (
-        <Switch>
-          <Route exact path='/'>
-            <HomePage />
-          </Route>
+      <div className='wrapper'>
+        <Navigation isLoaded={isLoaded} />
+        {isLoaded && (
+          <Switch>
+            <Route exact path='/'>
+              <HomePage />
+            </Route>
 
-          <Route path='/signup'>
-            <SignupFormPage />
-          </Route>
+            <Route path='/signup'>
+              <SignupFormPage />
+            </Route>
 
-          <Route exact path='/events'>
-            <EventsList />
-          </Route>
+            <Route exact path='/events'>
+              <EventsList />
+            </Route>
 
-          <Route path='/events/new'>
-            <EventFormPage />
-          </Route>
+            <Route path='/events/new'>
+              <EventFormPage />
+            </Route>
 
-          <Route path='/events/:eventId/edit'>
-            <EditEventForm events={events} />
-          </Route>
+            <Route path='/events/:eventId/edit'>
+              <EditEventForm events={events} />
+            </Route>
 
-          <Route path='/events/:eventId'>
-            <EventDetailPage />
-          </Route>
+            <Route path='/events/:eventId'>
+              <EventDetailPage />
+            </Route>
 
-          <Route exact path='/groups'>
-            <GroupsList />
-          </Route>
+            <Route exact path='/groups'>
+              <GroupsList />
+            </Route>
 
-          <Route path='/groups/new'>
-            <GroupFormPage />
-          </Route>
+            <Route path='/groups/new'>
+              <GroupFormPage />
+            </Route>
 
-          <Route path='/groups/:groupId/edit'>
-            <EditGroupForm groups={groups} />
-          </Route>
+            <Route path='/groups/:groupId/edit'>
+              <EditGroupForm groups={groups} />
+            </Route>
 
-          <Route path='/groups/:groupId'>
-            <GroupDetailPage />
-          </Route>
+            <Route path='/groups/:groupId'>
+              <GroupDetailPage />
+            </Route>
 
-          <Route>
-            404 Not Found!
-          </Route>
-        </Switch>
-      )}
+            <Route>
+              404 Not Found!
+            </Route>
+          </Switch>
+        )}
+        <div className='push'></div>
+      </div>
+      <Footer />
     </>
   );
 }

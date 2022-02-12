@@ -1,8 +1,21 @@
 /* TODO Add site wide styles */
 html {
   font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
 }
 
 body {
+  height: 100%;
   margin: 0;
+}
+
+.wrapper {
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -90px;
+  min-height: 100%;
+}
+
+.push, .footer {
+  height: 90px;
 }

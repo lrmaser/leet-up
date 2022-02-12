@@ -1,0 +1,24 @@
+.footer {
+  background-color: rgb(33 33 33);
+}
+
+.footer-content {
+  align-items: center;
+  color: rgb(246 247 248);
+  display: flex;
+  flex-direction: column;
+  height: 90px;
+  justify-content: center;
+}
+
+.footer-header {
+  font-size: 20px;
+  padding: 5px;
+}
+
+.footer-icons a {
+  color: rgb(246 247 248);
+  font-size: 30px;
+  padding: 0 10px;
+  text-decoration: none;
+}
