@@ -48,6 +48,8 @@ const EventDetailPage = () => {
 
   };
 
+  console.log('event in comp', event)
+
   if (!event) return null;
 
   // If user hosts event, show edit/delete buttons, else show attend event button
@@ -81,7 +83,7 @@ const EventDetailPage = () => {
             </div>
             <div className='event-details-host-info'>
               <div>Hosted By</div>
-              <div className='event-details-host-name'>{event.User.username}</div>
+              <div className='event-details-host-name'>{event?.User?.username}</div>
             </div>
           </div>
         </div>
@@ -113,7 +115,7 @@ const EventDetailPage = () => {
           <div className='event-details-right-container'>
             <div className='event-details-right'>
               <div className='event-details-group'>
-                {event.Group.name}
+                {event?.Group?.name}
               </div>
               {eventButtons}
             </div>
