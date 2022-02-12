@@ -13,6 +13,7 @@ import EventFormPage from './components/EventFormPage';
 import EditEventForm from './components/EditEventForm';
 import GroupsList from './components/GroupsList';
 import GroupDetailPage from './components/GroupDetailPage';
+import GroupFormPage from './components/GroupFormPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -33,27 +34,39 @@ function App() {
           <Route exact path='/'>
             <HomePage />
           </Route>
+
           <Route path='/signup'>
             <SignupFormPage />
           </Route>
+
           <Route exact path='/events'>
             <EventsList />
           </Route>
+
           <Route path='/events/new'>
             <EventFormPage />
           </Route>
+
           <Route path='/events/:eventId/edit'>
             <EditEventForm events={events} />
           </Route>
+
           <Route path='/events/:eventId'>
             <EventDetailPage />
           </Route>
+
           <Route exact path='/groups'>
             <GroupsList />
           </Route>
+
+          <Route path='/groups/new'>
+            <GroupFormPage />
+          </Route>
+
           <Route path='/groups/:groupId'>
             <GroupDetailPage />
           </Route>
+
           <Route>
             404 Not Found!
           </Route>
