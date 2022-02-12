@@ -113,7 +113,6 @@ export const getEventDetails = (eventId) => async (dispatch) => {
 /******************** Reducer ********************/
 const initialState = { events: {} };
 
-// Complete cases
 const eventReducer = (state = initialState, action) => {
   let newState;
   switch (action.type) {
