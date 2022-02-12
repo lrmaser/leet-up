@@ -45,7 +45,7 @@ const EventDetailPage = () => {
 
   const handleAttend = async (e) => {
     e.preventDefault();
-
+    // TODO
   };
 
   if (!event) return null;
@@ -110,9 +110,7 @@ const EventDetailPage = () => {
           </div>
           <div className='event-details-right-container'>
             <div className='event-details-right'>
-              <div className='event-details-group'>
-                {event?.Group?.name}
-              </div>
+              <div className='event-details-group'>{event?.Group?.name}</div>
               {eventButtons}
             </div>
           </div>

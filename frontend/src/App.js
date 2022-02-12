@@ -12,6 +12,7 @@ import EventDetailPage from './components/EventDetailPage';
 import EventFormPage from './components/EventFormPage';
 import EditEventForm from './components/EditEventForm';
 import GroupsList from './components/GroupsList';
+import GroupDetailPage from './components/GroupDetailPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -49,6 +50,9 @@ function App() {
           </Route>
           <Route exact path='/groups'>
             <GroupsList />
+          </Route>
+          <Route path='/groups/:groupId'>
+            <GroupDetailPage />
           </Route>
           <Route>
             404 Not Found!

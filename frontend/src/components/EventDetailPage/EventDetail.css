@@ -59,6 +59,7 @@
 }
 
 .event-details-image img {
+  border-radius: 8px;
   height: 370px;
   margin-top: 32px;
   object-fit: cover;
