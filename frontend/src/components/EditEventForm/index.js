@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
 
 import { updateEvent } from '../../store/events';
-
 import './EditEventForm.css';
 
 // Format date in yyyy-mm-dd

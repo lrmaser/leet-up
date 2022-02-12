@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import * as sessionActions from './store/session';
 import { getEvents } from './store/events';
+import { getGroups } from './store/groups';
 import Navigation from './components/Navigation';
 import HomePage from './components/HomePage';
 import SignupFormPage from './components/SignupFormPage';
@@ -14,16 +15,21 @@ import EditEventForm from './components/EditEventForm';
 import GroupsList from './components/GroupsList';
 import GroupDetailPage from './components/GroupDetailPage';
 import GroupFormPage from './components/GroupFormPage';
+import EditGroupForm from './components/EditGroupForm';
 
 function App() {
   const dispatch = useDispatch();
 
   const events = useSelector(state => state.events.events);
+  const groups = useSelector(state => state.groups.groups);
 
   const [ isLoaded, setIsLoaded ] = useState(false);
 
   useEffect(() => {
-    dispatch(sessionActions.restoreUser()).then(dispatch(getEvents())).then(() => setIsLoaded(true));
+    dispatch(sessionActions.restoreUser())
+      .then(dispatch(getEvents()))
+      .then(dispatch(getGroups()))
+      .then(() => setIsLoaded(true));
   }, [dispatch]);
 
   return (
@@ -61,6 +67,10 @@ function App() {
 
           <Route path='/groups/new'>
             <GroupFormPage />
+          </Route>
+
+          <Route path='/groups/:groupId/edit'>
+            <EditGroupForm groups={groups} />
           </Route>
 
           <Route path='/groups/:groupId'>
