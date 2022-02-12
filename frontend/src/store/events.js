@@ -128,9 +128,6 @@ const eventReducer = (state = initialState, action) => {
         ...state,
         [action.newEvent.id]: action.newEvent
       };
-      console.log('add newState', newState)
-      console.log('add state', state)
-      console.log('add action', action)
       return newState;
     case REMOVE_EVENT:
       newState = {...state};
@@ -150,7 +147,6 @@ const eventReducer = (state = initialState, action) => {
           ...action.event
         }
       };
-      console.log('selected newState', newState)
       return newState;
     default:
       return state;

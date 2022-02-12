@@ -48,8 +48,6 @@ const EventDetailPage = () => {
 
   };
 
-  console.log('event in comp', event)
-
   if (!event) return null;
 
   // If user hosts event, show edit/delete buttons, else show attend event button
@@ -68,8 +66,6 @@ const EventDetailPage = () => {
       </div>
     );
   }
-
-  console.log(event.image)
 
   return (
     <main className='event-details-main'>

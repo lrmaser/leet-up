@@ -11,7 +11,6 @@ const EventsList = () => {
 
   const eventsObj = useSelector(state => state.events.events);
   const events = Object.values(eventsObj);
-  console.log('events in list page', events)
 
   useEffect(() => {
     dispatch(getEvents());
