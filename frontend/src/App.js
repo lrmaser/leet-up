@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import * as sessionActions from './store/session';
 import { getEvents } from './store/events';
 import Navigation from './components/Navigation';
+import HomePage from './components/HomePage';
 import SignupFormPage from './components/SignupFormPage';
 import EventsList from './components/EventsList';
 import EventDetailPage from './components/EventDetailPage';
@@ -27,6 +28,9 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          <Route exact path='/'>
+            <HomePage />
+          </Route>
           <Route path='/signup'>
             <SignupFormPage />
           </Route>
