@@ -1,0 +1,125 @@
+.home-main {
+  padding: 0 110px;
+}
+
+.home-about-container {
+  align-items: center;
+  display: flex;
+  margin-top: 96px;
+  margin-bottom: 64px;
+}
+
+.home-about-description {
+  display: flex;
+  flex-direction: column;
+  margin-right: 80px;
+}
+
+.home-about-description h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+.home-about-description p {
+  margin-bottom: 0;
+  margin-top: 24px;
+}
+
+.home-about-image img {
+  border-radius: 8px;
+  height: 275px;
+  object-fit: cover;
+  width: 520px;
+}
+
+.home-how-container {
+  padding-top: 80px;
+}
+
+.home-how-container h2 {
+  font-size: 30px;
+  margin-bottom: 8px;
+  margin-top: 0;
+  text-align: center;
+}
+
+.home-how-container p {
+  margin: 0 280px 40px 280px;
+  text-align: center;
+}
+
+.home-join-find-start-container {
+  display: flex;
+  margin-bottom: 80px;
+}
+
+.home-join-container,
+.home-find-container,
+.home-start-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 24px;
+  width: 33%;
+}
+
+.home-join-container img,
+.home-find-container img,
+.home-start-container img {
+  border-radius: 8px;
+}
+
+.home-join-container a,
+.home-find-container a,
+.home-start-container a {
+  text-decoration: none;;
+}
+
+.home-join-container h3,
+.home-find-container h3,
+.home-start-container h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.home-join-container p,
+.home-find-container p,
+.home-start-container p {
+  font-size: 14px;
+  text-align: center;
+}
+
+.home-join-button-container {}
+
+.home-upcoming-events-container {}
+
+.home-explore-events {}
+
+.home-events-container {}
+
+.home-event {}
+
+.home-event-image {}
+
+.home-event-info {}
+
+.home-event-date {}
+
+.home-event-name {}
+
+.home-event-group {}
+
+.home-popular-groups-container {}
+
+.home-popular-groups {}
+
+.home-explore-groups {}
+
+.home-groups-container {}
+
+.home-group {}
+
+.home-group-image {}
+
+.home-group-name {}

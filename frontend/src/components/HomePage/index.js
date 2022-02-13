@@ -3,9 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { getEvents } from '../../store/events';
+import { getGroups } from '../../store/groups';
 import './Home.css';
 
 const HomePage = () => {
+  const sessionUser = useSelector(state => state.session.user);
+
   return (
     <main className='home-main'>
       <div className='home-about-container'>
@@ -24,11 +27,10 @@ const HomePage = () => {
       <div className='home-join-find-start-container'>
         <div className='home-join-container'>
           <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9CWVtsvt8EJzyXS4cBS8EO6R8QZ3cUi1pKA&usqp=CAU' alt='People Waving to Join Them'></img>
-          {/* /signup if not logged in, /groups if logged in */}
-          <Link to=''>
+          <Link to={sessionUser ? '/groups' : '/signup'}>
             <h3>Join a Group</h3>
           </Link>
-          <p>Find your fellow coders in your areas of interest.</p>
+          <p>Find your fellow coders in a variety of fields and interests.</p>
         </div>
         <div className='home-find-container'>
           <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe5gVhKVLV1W1zz9eRgqDmGWRjgoeQleGevQ&usqp=CAU' alt='Speaker Event'></img>
@@ -40,7 +42,7 @@ const HomePage = () => {
         <div className='home-start-container'>
           <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfc59OBFTv6Jv5ZFlLS1Rn-RitMlNA3CgkvA&usqp=CAU' alt='Group of People'></img>
           {/* /signup if not logged in, /groups/new if logged in */}
-          <Link>
+          <Link to={sessionUser ? '/groups/new' : '/signup'}>
             <h3>Start a Group</h3>
           </Link>
           <p>Not seeing the right group for you? That's just because you haven't created it yet!</p>
