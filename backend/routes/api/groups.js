@@ -55,7 +55,12 @@ router.put('/:groupId(\\d+)', asyncHandler(async (req, res) => {
 // GET /api/groups/:groupId - READ
 router.get('/:groupId(\\d+)', asyncHandler(async (req, res) => {
   const groupId = req.params.groupId;
-  const group = await Group.findByPk(groupId);
+  const group = await Group.findByPk(
+    groupId,
+    {
+      include: [ User, Event ]
+    }
+  );
 
   return res.json(group);
 }));

@@ -1,6 +1,10 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Group = sequelize.define('Group', {
+    ownerId: {
+      allowNull: false,
+      type: DataTypes.INTEGER
+    },
     name: {
       allowNull: false,
       type: DataTypes.STRING(80)
@@ -18,8 +22,9 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'groupId'
     };
 
-    Group.belongsToMany(models.User, columnMappingUserGroup);
+    Group.belongsTo(models.User, { foreignKey: 'ownerId' });
     Group.hasMany(models.Event, { foreignKey: 'categoryId' });
+    Group.belongsToMany(models.User, columnMappingUserGroup);
   };
   return Group;
 };
