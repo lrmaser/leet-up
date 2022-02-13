@@ -69,7 +69,7 @@ const HomePage = () => {
         <div key={event.id} className='home-event'>
           <Link to={`/events/${event.id}`}>
             <div className='home-event-image'>
-              <img src={event.image} alt='Event'></img>
+              <img src={event.image ? event.image : 'https://st4.depositphotos.com/14953852/24787/v/600/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg'} alt='Event'></img>
             </div>
             <div className='home-event-info'>
               <div className='home-event-date'>{`${formatDate(event.date).toUpperCase()} @ ${formatTime(event.date).toUpperCase()}`}</div>
