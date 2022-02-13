@@ -79,7 +79,7 @@
 .home-join-container h3,
 .home-find-container h3,
 .home-start-container h3 {
-  color: rgb(0 130 148);
+  color: #02732A;
   font-size: 20px;
   margin-bottom: 12px;
 }
@@ -101,9 +101,9 @@
 
 .home-join-button-container a {
   align-items: center;
-  background-color: #008294;
+  background-color: #03A62C;
   border-radius: 8px;
-  color: #fff;
+  color: #100D26;
   display: flex;
   height: 24px;
   padding: 8px 16px;
@@ -126,7 +126,7 @@
 
 .home-explore-events a,
 .home-explore-groups a {
-  color: rgb(0 130 148);
+  color: #02732A;
   text-decoration: none;
 }
 
