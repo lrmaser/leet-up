@@ -10,7 +10,7 @@ const GroupDetailPage = () => {
   const history = useHistory();
   const group = useSelector(state => state.groups[groupId]);
   const sessionUser = useSelector(state => state.session.user);
-
+  console.log('test', group)
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -35,15 +35,22 @@ const GroupDetailPage = () => {
 
   if (!group) return null;
 
-  // If logged in user owns group show edit/delete buttons,
+  // If logged in user owns group and has no events show edit/delete buttons,
+  // if logged in user owns group and has events show edit button,
   // if logged in user does not own group, show join button,
   // else show nothing
   let groupButtons = null;
-  if (sessionUser && sessionUser.id === group.ownerId) {
+  if (sessionUser && sessionUser.id === group.ownerId && group.Events?.length === 0) {
     groupButtons = (
       <div className='group-details-buttons'>
         <button type='button' onClick={handleEdit}>Edit</button>
         <button type='button' onClick={handleDelete}>Delete</button>
+      </div>
+    );
+  } else if (sessionUser && sessionUser.id === group.ownerId && group.Events?.length > 0) {
+    groupButtons = (
+      <div className='group-details-buttons'>
+        <button type='button' onClick={handleEdit}>Edit</button>
       </div>
     );
   } else if (sessionUser && sessionUser.id !== group.ownerId) {
