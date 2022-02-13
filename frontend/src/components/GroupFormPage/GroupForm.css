@@ -26,6 +26,14 @@
   margin-top: 0;
 }
 
+.group-form-errors {
+  background-color: #fdb7ad;
+  border: 1px solid #fa604a;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  padding: 15px;
+}
+
 .group-form-name-container,
 .group-form-details-container {
   display: flex;
