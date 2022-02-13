@@ -69,14 +69,26 @@ const EventFormPage = () => {
     history.push('/events');
   };
 
+  let errorBox;
+  if (errors.length > 0) {
+    errorBox = (
+      <div className='event-form-errors'>
+        <p>The following error(s) occurred:</p>
+        <ul>
+          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+        </ul>
+      </div>
+    );
+  } else {
+    errorBox = null;
+  }
+
   return (
     <main className='event-form-main'>
       <div className='event-form-container'>
         <form onSubmit={handleSubmit}>
           <h2>Create an Event</h2>
-          <ul className='event-form-errors'>
-            {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-          </ul>
+          {errorBox}
           <div className='event-form-group-container'>
             <label htmlFor='event-form-group'>Hosting Group</label>
             <select
