@@ -20,6 +20,14 @@
   flex-direction: column;
 }
 
+.signup-form-errors {
+  background-color: #fdb7ad;
+  border: 1px solid #fa604a;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  padding: 15px;
+}
+
 .signup-form-contents {
   margin-top: 32px;
   margin-bottom: 16px;

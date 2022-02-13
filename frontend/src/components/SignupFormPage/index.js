@@ -34,17 +34,29 @@ const SignupFormPage = () => {
     return setErrors(['Confirm Password field must be the same as the Password field']);
   };
 
+  let errorBox;
+  if (errors.length > 0) {
+    errorBox = (
+      <div className='signup-form-errors'>
+        <p>The following error(s) occurred:</p>
+        <ul>
+          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+        </ul>
+      </div>
+    );
+  } else {
+    errorBox = null;
+  }
+
   return (
     <main className='signup-main'>
       <div className='signup-form-container'>
         <form onSubmit={handleSubmit}>
-          <ul>
-            {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-          </ul>
           <div className='signup-headers'>
             <img src='/images/LeetUpLogo.png' alt='LeetUp Logo'></img>
             <h1>Sign Up</h1>
           </div>
+          {errorBox}
           <div className='signup-form-contents'>
             <div className='signup-name-container'>
               <label htmlFor='signup-name'>Username</label>
