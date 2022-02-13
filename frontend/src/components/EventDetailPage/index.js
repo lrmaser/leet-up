@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
 
@@ -28,6 +28,8 @@ const EventDetailPage = () => {
 
   const dispatch = useDispatch();
 
+  const [ attend, setAttend ] = useState('Attend');
+
   useEffect(() => {
     dispatch(getEventDetails(eventId));
   }, [dispatch, eventId]);
@@ -45,7 +47,12 @@ const EventDetailPage = () => {
 
   const handleAttend = async (e) => {
     e.preventDefault();
-    // TODO
+
+    if (attend === 'Attend') {
+      setAttend('Attending')
+    } else {
+      setAttend('Attend');
+    }
   };
 
   if (!event) return null;
@@ -62,7 +69,7 @@ const EventDetailPage = () => {
   } else if (sessionUser && sessionUser.id !== event.hostId) {
     eventButtons = (
       <div className='event-details-buttons'>
-        <button type='button'>Attend</button>
+        <button type='button' onClick={handleAttend}>{attend}</button>
       </div>
     );
   }
