@@ -14,7 +14,7 @@
 }
 
 .event-list-headers a {
-  color: rgb(0 130 148);
+  color: #02732A;
   font-size: 20px;
   font-weight: bold;
   margin-right: 16px;
@@ -23,7 +23,7 @@
 }
 
 .event-list-headers a:hover {
-  border-bottom: 4px solid rgb(0 130 148);
+  border-bottom: 4px solid #02732A;
 }
 
 .event-list-contents a {
