@@ -8,7 +8,20 @@ const LoginForm = () => {
   const dispatch = useDispatch();
   const [ credential, setCredential ] = useState('');
   const [ password, setPassword ] = useState('');
+  const [ demo, setDemo ] = useState();
   const [ errors, setErrors ] = useState([]);
+
+  const handleDemo = (e) => {
+    setDemo(e.target.checked);
+
+    if (!demo) {
+      setCredential('user1@demo.com');
+      setPassword('password1');
+    } else {
+      setCredential('');
+      setPassword('');
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -51,6 +64,14 @@ const LoginForm = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
+        </div>
+        <div className='login-demo-user'>
+          <input
+            type='checkbox'
+            value={demo}
+            onChange={handleDemo}
+          />
+          <span>Log in as Demo User?</span>
         </div>
         <button type='submit' className='login-form-button'>Log In</button>
       </div>

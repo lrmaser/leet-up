@@ -66,6 +66,22 @@
   font-size: 100%;
 }
 
+.login-demo-user {
+  align-items: center;
+  display: flex;
+  margin-top: 24px;
+}
+
+.login-demo-user input {
+  height: 16px;
+  margin-right: 10px;
+  width: 16px;
+}
+
+.login-demo-user span {
+  font-size: 14px;
+}
+
 .login-form-button {
   height: 45px;
   padding: 8px 12px;
