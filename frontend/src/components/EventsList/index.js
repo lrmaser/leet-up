@@ -11,6 +11,8 @@ const EventsList = () => {
 
   const eventsObj = useSelector(state => state.events.events);
   const events = Object.values(eventsObj);
+  const upcomingEvents = events.filter(event => event.date >= new Date().toISOString());
+  const upcomingEventsSorted = upcomingEvents.sort((eventA, eventB) =>  new Date(eventA.date) - new Date(eventB.date));
 
   useEffect(() => {
     dispatch(getEvents());
@@ -19,7 +21,7 @@ const EventsList = () => {
   let eventsList;
   if (events.length > 0) {
     eventsList = (
-      events.map(event => (
+      upcomingEventsSorted.map(event => (
         <EventDetail key={event.id} id={event.id} image={event.image} date={event.date} eventName={event.name} groupName={event.Group.name}/>
       ))
     );
