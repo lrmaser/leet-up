@@ -6,10 +6,6 @@
   padding: 0 20px 24px 20px;
 }
 
-.group-details-left-container {}
-
-.group-details-image-details {}
-
 .group-details-image img {
   border-radius: 8px;
   height: 370px;
@@ -46,8 +42,6 @@
   margin-bottom: 20px;
   margin-top: 0;
 }
-
-.group-details-past-events {}
 
 .group-details-right-container {
   margin-left: 112px;
