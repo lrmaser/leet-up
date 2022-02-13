@@ -45,15 +45,26 @@ const EditGroupForm = ({ groups }) => {
     history.push(`/groups/${groupId}`);
   };
 
+  let errorBox;
+  if (errors.length > 0) {
+    errorBox = (
+      <div className='group-form-errors'>
+        <p>The following error(s) occurred:</p>
+        <ul>
+          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+        </ul>
+      </div>
+    );
+  } else {
+    errorBox = null;
+  }
 
   return (
     <main className='group-form-main'>
       <div className='group-form-container'>
         <form onSubmit={handleSubmit}>
           <h2>Edit a Group</h2>
-          <ul className='group-form-errors'>
-            {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-          </ul>
+          {errorBox}
           <div className='group-form-name-container'>
             <label htmlFor='group-form-name'>Group Name</label>
             <input
