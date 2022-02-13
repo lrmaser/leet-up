@@ -143,7 +143,6 @@ const HomePage = () => {
         </div>
         <div className='home-start-container'>
           <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfc59OBFTv6Jv5ZFlLS1Rn-RitMlNA3CgkvA&usqp=CAU' alt='Group of People'></img>
-          {/* /signup if not logged in, /groups/new if logged in */}
           <Link to={sessionUser ? '/groups/new' : '/signup'}>
             <h3>Start a Group</h3>
           </Link>
