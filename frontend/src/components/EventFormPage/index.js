@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import { createEvent } from '../../store/events';
+import { getGroups } from '../../store/groups';
 import './EventForm.css';
 
 const defaultDate = () => {
@@ -14,7 +15,11 @@ const defaultDate = () => {
 const EventFormPage = () => {
   const dispatch = useDispatch();
   const history = useHistory();
+
   const sessionUser = useSelector(state => state.session.user);
+  const allGroupsObj = useSelector(state => state.groups.groups);
+  const allGroups = Object.values(allGroupsObj);
+  const groups = allGroups.filter(group => sessionUser.id === group.ownerId);
 
   const [ categoryId, setCategoryId ] = useState('');
   const [ name, setName ] = useState('');
@@ -32,6 +37,10 @@ const EventFormPage = () => {
   const updateCapacity = (e) => setCapacity(e.target.value);
   const updateImage = (e) => setImage(e.target.value);
   const updateDetails = (e) => setDetails(e.target.value);
+
+  useEffect(() => {
+    dispatch(getGroups());
+  }, [dispatch]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -72,11 +81,9 @@ const EventFormPage = () => {
               name='event-form-group'
               value={categoryId}
               onChange={updateCategoryId}
-              required
             >
-              {/* List user's groups, remove hard-coded value */}
               <option value=''>Please choose an option</option>
-              <option value='1'>Group 1</option>
+              {groups.map(group => <option key={group.id} value={group.id}>{group.name}</option>)}
             </select>
           </div>
           <div className='event-form-name-container'>

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
 
 import { updateEvent } from '../../store/events';
+import { getGroups } from '../../store/groups';
 import './EditEventForm.css';
 
 // Format date in yyyy-mm-dd
@@ -20,13 +21,16 @@ const formatTime = (time) => {
 };
 
 const EditEventForm = ({ events }) => {
+  const dispatch = useDispatch();
+  const history = useHistory();
+
   const { eventId } = useParams();
   const event = events[eventId];
 
   const sessionUser = useSelector(state => state.session.user);
-
-  const dispatch = useDispatch();
-  const history = useHistory();
+  const allGroupsObj = useSelector(state => state.groups.groups);
+  const allGroups = Object.values(allGroupsObj);
+  const groups = allGroups.filter(group => sessionUser.id === group.ownerId);
 
   const [ categoryId, setCategoryId ] = useState(event.categoryId);
   const [ name, setName ] = useState(event.name);
@@ -87,9 +91,8 @@ const EditEventForm = ({ events }) => {
               onChange={updateCategoryId}
               required
             >
-              {/* List user's groups, remove hard-coded value */}
               <option value=''>Please choose an option</option>
-              <option value='1'>Group 1</option>
+              {groups.map(group => <option key={group.id} value={group.id}>{group.name}</option>)}
             </select>
           </div>
           <div className='event-form-name-container'>
