@@ -179,10 +179,6 @@
   margin: 8px 0;
 }
 
-.home-no-events {
-
-}
-
 .home-groups-container {
   display: flex;
   padding: 32px 0 150px 0;
@@ -219,5 +215,3 @@
   font-size: 20px;
   margin: 0;
 }
-
-.home-no-groups {}
