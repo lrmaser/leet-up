@@ -90,11 +90,44 @@
   text-align: center;
 }
 
-.home-join-button-container {}
+.home-join-button-container {
+  align-items: center;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  padding-bottom: 80px;
+}
 
-.home-upcoming-events-container {}
+.home-join-button-container a {
+  align-items: center;
+  background-color: #008294;
+  border-radius: 8px;
+  color: #fff;
+  display: flex;
+  height: 24px;
+  padding: 8px 16px;
+  text-decoration: none;
+}
 
-.home-explore-events {}
+.home-upcoming-events-container,
+.home-popular-groups-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 64px;
+}
+
+.home-upcoming-events h2,
+.home-popular-groups h2 {
+  font-size: 30px;
+  margin: 0;
+}
+
+.home-explore-events a,
+.home-explore-groups a {
+  color: rgb(0 130 148);
+  text-decoration: none;
+}
 
 .home-events-container {}
 
@@ -109,12 +142,6 @@
 .home-event-name {}
 
 .home-event-group {}
-
-.home-popular-groups-container {}
-
-.home-popular-groups {}
-
-.home-explore-groups {}
 
 .home-groups-container {}
 
