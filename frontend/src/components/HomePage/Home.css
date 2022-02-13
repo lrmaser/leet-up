@@ -136,6 +136,8 @@
 }
 
 .home-event {
+  border: 1px solid rgb(217 217 217);
+  border-radius: 8px;
   height: 350px;
   margin-right: 15px;
   width: 265px;
@@ -146,7 +148,8 @@
 }
 
 .home-event-image img {
-  border-radius: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   height: 149px;
   object-fit: cover;
   width: 265px;
