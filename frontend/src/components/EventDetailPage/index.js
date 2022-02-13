@@ -110,7 +110,13 @@ const EventDetailPage = () => {
           </div>
           <div className='event-details-right-container'>
             <div className='event-details-right'>
-              <div className='event-details-group'>{event?.Group?.name}</div>
+              <div className='event-details-group-container'>
+                {/* {event?.Group?.name} */}
+                <div className='event-details-group'>
+                  <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEBsn_UBdDUqkiMUoOQYUjLRQB6D4UC_fdFg&usqp=CAU' alt='Group of People Icons'></img>
+                  <span>{event?.Group?.name}</span>
+                </div>
+              </div>
               {eventButtons}
             </div>
           </div>
