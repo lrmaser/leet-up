@@ -61,7 +61,7 @@ const GroupDetailPage = () => {
       <div className='group-details-left-container'>
         <div className='group-details-image-details'>
           <div className='group-details-image'>
-            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmiX6KlsV8U1SURHBcVTfPRgqyMUctbciwCg&usqp=CAU' alt='Group of People Icons'></img>
+            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEBsn_UBdDUqkiMUoOQYUjLRQB6D4UC_fdFg&usqp=CAU' alt='Group of People Icons'></img>
           </div>
           <div className='group-details-details-container'>
             <h2 className='group-details-headers'>About</h2>
@@ -78,8 +78,6 @@ const GroupDetailPage = () => {
           </div>
         </div>
       </div>
-
-
       <div className='group-details-right-container'>
         <div className='group-details-right'>
           <h1>{group.name}</h1>
@@ -89,7 +87,7 @@ const GroupDetailPage = () => {
           </span>
           <span className='group-details-organizer'>
             {/* Find way to check if sessionUser is owner */}
-            Organized by
+            Organized by {group?.User?.username}
           </span>
           {groupButtons}
         </div>

@@ -1,0 +1,95 @@
+.group-details-main {
+  border-top: 1px solid rgb(230, 230, 230);
+  display: flex;
+  height: 1250px;
+  margin: 0 90px;
+  padding: 0 20px 24px 20px;
+}
+
+.group-details-left-container {}
+
+.group-details-image-details {}
+
+.group-details-image img {
+  border-radius: 8px;
+  height: 370px;
+  margin-top: 32px;
+  object-fit: contain;
+  width: 660px;
+}
+
+.group-details-details-container {
+  height: 248px;
+  margin-top: 20px;
+  width: 660px;
+}
+
+.group-details-headers {
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.group-details-details {
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.group-details-past-events-container {
+  height: 248px;
+  margin-top: 20px;
+  width: 660px;
+}
+
+.group-details-past-events-header {
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.group-details-past-events {}
+
+.group-details-right-container {
+  margin-left: 112px;
+  margin-top: 32px;
+}
+
+.group-details-right {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 1rem;
+  padding: 24px;
+  width: 298px;
+}
+
+.group-details-right h1 {
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.group-details-members {
+  font-size: 14px;
+  margin-left: 5px;
+  margin-top: 4px;
+}
+
+.group-details-organizer {
+  font-size: 14px;
+  margin-left: 5px;
+  margin-top: 4px;
+  padding-bottom: 20px;
+}
+
+.group-details-buttons button{
+  background-color: #f65858;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  height: 45px;
+  margin-top: 20px;
+  padding: 10px 32px;
+  width: 100%;
+}
