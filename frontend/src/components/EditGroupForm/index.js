@@ -27,6 +27,7 @@ const EditGroupForm = ({ groups }) => {
 
     const payload = {
       ...group,
+      ownerId: sessionUser.id,
       name,
       details
     };

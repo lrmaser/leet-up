@@ -39,23 +39,22 @@ const GroupDetailPage = () => {
   // if logged in user does not own group, show join button,
   // else show nothing
   let groupButtons = null;
-  // TODO, may need workaround to grab sessionUser id as data from create group form
-  // if () {
-  //   groupButtons = (
-  //     <div className='group-details-buttons'>
-  //       <button type='button' onClick={handleEdit}>Edit</button>
-  //       <button type='button' onClick={handleDelete}>Delete</button>
-  //     </div>
-  //   );
-  // } else if () {
-  //   groupButtons = (
-  //     <div className='group-details-buttons'>
-  //       <button type='button'>Join</button>
-  //     </div>
-  //   );
-  // } else {
-  //   groupButtons = null;
-  // }
+  if (sessionUser && sessionUser.id === group.ownerId) {
+    groupButtons = (
+      <div className='group-details-buttons'>
+        <button type='button' onClick={handleEdit}>Edit</button>
+        <button type='button' onClick={handleDelete}>Delete</button>
+      </div>
+    );
+  } else if (sessionUser && sessionUser.id !== group.ownerId) {
+    groupButtons = (
+      <div className='group-details-buttons'>
+        <button type='button'>Join</button>
+      </div>
+    );
+  } else {
+    groupButtons = null;
+  }
 
   return (
     <main className='group-details-main'>

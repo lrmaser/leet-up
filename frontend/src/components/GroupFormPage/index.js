@@ -22,6 +22,7 @@ const GroupFormPage = () => {
     // setErrors([]);
 
     const payload = {
+      ownerId: sessionUser.id,
       name,
       details
     };
