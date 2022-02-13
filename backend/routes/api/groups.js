@@ -8,7 +8,14 @@ const { Event, Group, User } = require('../../db/models');
 const router = express.Router();
 
 /******************** Validation Middleware ********************/
-// TODO
+const validateGroup = [
+  check('name')
+    .exists({ checkFalsy: true })
+    .withMessage('Please provide a name for the group.')
+    .isLength({ max: 80 })
+    .withMessage('Group name cannot be more than 80 characters long.'),
+  handleValidationErrors
+];
 
 // GET /api/groups - READ
 router.get('/', asyncHandler(async (req, res) => {
@@ -18,7 +25,7 @@ router.get('/', asyncHandler(async (req, res) => {
 }));
 
 // POST /api/groups - CREATE
-router.post('/', asyncHandler(async (req, res) => {
+router.post('/', validateGroup, asyncHandler(async (req, res) => {
   const group = await Group.create(req.body);
 
   return res.json(group);
@@ -41,7 +48,7 @@ router.delete('/:groupId(\\d+)', asyncHandler(async (req, res) => {
 }));
 
 // PUT /api/groups/:groupId - UPDATE
-router.put('/:groupId(\\d+)', asyncHandler(async (req, res) => {
+router.put('/:groupId(\\d+)', validateGroup, asyncHandler(async (req, res) => {
   const groupId = req.params.groupId;
   const group = await Group.findByPk(groupId);
 

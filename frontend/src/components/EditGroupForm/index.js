@@ -23,7 +23,7 @@ const EditGroupForm = ({ groups }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // setErrors([]);
+    setErrors([]);
 
     const payload = {
       ...group,
@@ -34,10 +34,10 @@ const EditGroupForm = ({ groups }) => {
 
     return dispatch(updateGroup(payload))
       .then(() => history.push(`/groups/${groupId}`))
-      // .catch(async (res) => {
-      //   const data = await res.json();
-      //   if (data && data.errors) setErrors(data.errors);
-      // });
+      .catch(async (res) => {
+        const data = await res.json();
+        if (data && data.errors) setErrors(data.errors);
+      });
 
     // Add cancel option
   };
@@ -48,9 +48,9 @@ const EditGroupForm = ({ groups }) => {
       <div className='group-form-container'>
         <form onSubmit={handleSubmit}>
           <h2>Edit a Group</h2>
-          {/* <ul className='group-form-errors'>
+          <ul className='group-form-errors'>
             {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-          </ul> */}
+          </ul>
           <div className='group-form-name-container'>
             <label htmlFor='group-form-name'>Group Name</label>
             <input

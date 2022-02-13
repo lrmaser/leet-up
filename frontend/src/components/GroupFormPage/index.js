@@ -19,7 +19,7 @@ const GroupFormPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // setErrors([]);
+    setErrors([]);
 
     const payload = {
       ownerId: sessionUser.id,
@@ -29,10 +29,10 @@ const GroupFormPage = () => {
 
     return dispatch(createGroup(payload))
       .then(() => history.push('/groups'))
-      // .catch(async (res) => {
-      //   const data = await res.json();
-      //   if (data && data.errors) setErrors(data.errors);
-      // });
+      .catch(async (res) => {
+        const data = await res.json();
+        if (data && data.errors) setErrors(data.errors);
+      });
 
     // Add cancel option
   };
@@ -42,9 +42,9 @@ const GroupFormPage = () => {
       <div className='group-form-container'>
         <form onSubmit={handleSubmit}>
           <h2>Create a Group</h2>
-          {/* <ul className='group-form-errors'>
+          <ul className='group-form-errors'>
             {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-          </ul> */}
+          </ul>
           <div className='group-form-name-container'>
             <label htmlFor='group-form-name'>Group Name</label>
             <input
