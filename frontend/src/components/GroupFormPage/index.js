@@ -33,8 +33,11 @@ const GroupFormPage = () => {
         const data = await res.json();
         if (data && data.errors) setErrors(data.errors);
       });
+  };
 
-    // Add cancel option
+  const handleCancel = (e) => {
+    e.preventDefault();
+    history.push('/groups');
   };
 
   return (
@@ -67,6 +70,7 @@ const GroupFormPage = () => {
             />
           </div>
           <button type='submit' className='group-form-button'>Submit</button>
+          <button type='button' className='group-form-button' onClick={handleCancel}>Cancel</button>
         </form>
       </div>
     </main>

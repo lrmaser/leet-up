@@ -62,8 +62,11 @@ const EventFormPage = () => {
         const data = await res.json();
         if (data && data.errors) setErrors(data.errors);
       });
+  };
 
-    // Add Cancel option
+  const handleCancel = (e) => {
+    e.preventDefault();
+    history.push('/events');
   };
 
   return (
@@ -154,6 +157,7 @@ const EventFormPage = () => {
             />
           </div>
           <button type='submit' className='event-form-button'>Submit</button>
+          <button type='button' className='event-form-button' onClick={handleCancel}>Cancel</button>
         </form>
       </div>
     </main>
