@@ -1,4 +1,5 @@
 .nav-ul {
+  background-color: rgb(33 33 33);
   border-bottom: 1px solid rgb(230 230 230);
   font-size: 16px;
   height: 64px;
@@ -23,7 +24,7 @@
 }
 
 .nav-logo-browse a {
-  color: rgb(0 130 148);
+  color: #C7CFD9;
   margin-right: 20px;
   text-decoration: none;
 }
@@ -44,13 +45,13 @@
 }
 
 .nav-links a {
-  color: rgb(0 130 148);
+  color: #C7CFD9;
   margin-left: 20px;
   text-decoration: none;
 }
 
 .user-icon-button {
-  background-color: rgb(230, 163, 134);
+  background-color: #03A62C;
   border: 1px solid black;
   border-radius: 50%;
   height: 50px;
@@ -63,6 +64,7 @@
 }
 
 .profile-dropdown {
+  color: #C7CFD9;
   margin-left: 20px;
   padding: 0;
 }
@@ -72,9 +74,9 @@
 }
 
 .profile-dropdown-logout {
-  background-color: #f65858;
+  background-color: #03A62C;
   border: 0;
   border-radius: 6px;
-  color: #fff;
+  color: rgb(33 33 33);
   font-size: 16px;
 }

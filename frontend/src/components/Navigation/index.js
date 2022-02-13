@@ -33,7 +33,7 @@ const Navigation = ({ isLoaded }) => {
         <div className='nav-container'>
           <div className='nav-logo-browse'>
             <NavLink className='nav-logo' exact to='/'>
-              <img src='/images/LeetUpLogo.png' alt='LeetUp Logo'></img>
+              <img src='/images/LeetUpLogoGreen.png' alt='LeetUp Logo'></img>
             </NavLink>
             <NavLink activeClassName='nav-selected' exact to='/events'>Browse Events</NavLink>
             <NavLink activeClassName='nav-selected' exact to='/groups'>Browse Groups</NavLink>
