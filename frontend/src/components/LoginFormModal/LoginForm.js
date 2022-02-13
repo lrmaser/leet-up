@@ -33,15 +33,27 @@ const LoginForm = () => {
       });
   };
 
+  let errorBox;
+  if (errors.length > 0) {
+    errorBox = (
+      <div className='login-form-errors'>
+        <p>The following error(s) occurred:</p>
+        <ul>
+          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+        </ul>
+      </div>
+    );
+  } else {
+    errorBox = null;
+  }
+
   return (
     <form onSubmit={handleSubmit}>
-      <ul>
-        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-      </ul>
       <div className='login-headers'>
         <img src='/images/LeetUpLogo.png' alt='LeetUp Logo'></img>
         <h1>Log In</h1>
       </div>
+      {errorBox}
       <div className='login-form-contents'>
         <div className='login-email-container'>
           <label htmlFor='login-email'>Email</label>
