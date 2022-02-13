@@ -19,7 +19,7 @@ const EventsList = () => {
   }, [dispatch]);
 
   let eventsList;
-  if (events.length > 0) {
+  if (upcomingEventsSorted.length > 0) {
     eventsList = (
       upcomingEventsSorted.map(event => (
         <EventDetail key={event.id} id={event.id} image={event.image} date={event.date} eventName={event.name} groupName={event.Group.name}/>
