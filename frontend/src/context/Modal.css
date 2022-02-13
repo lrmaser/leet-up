@@ -94,8 +94,7 @@
   height: 45px;
   padding: 8px 12px;
   width: 346px;
-  background-color: #f65858;
-  border-color: #f65858;
+  background-color: #03A62C;
   border-radius: 8px;
   color: #fff;
   padding: 8px 12px;
@@ -115,4 +114,9 @@
 
 .login-not-member span {
   margin-right: 10px;
+}
+
+.login-not-member a {
+  color:  #02732A;
+  text-decoration: none;
 }
