@@ -5,7 +5,7 @@ const GroupDetail = ({ id, name, details }) => {
     <Link to={`/groups/${id}`}>
       <div className='group-list-detail'>
         <div className='group-list-image-container'>
-          <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmiX6KlsV8U1SURHBcVTfPRgqyMUctbciwCg&usqp=CAU' alt='Group of People Icons'></img>
+          <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEBsn_UBdDUqkiMUoOQYUjLRQB6D4UC_fdFg&usqp=CAU' alt='Group of People Icons'></img>
         </div>
         <div className='group-list-info'>
           <p className='group-list-group-name'>{name}</p>
