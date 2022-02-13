@@ -62,7 +62,7 @@ const HomePage = () => {
   }, [dispatch]);
 
   let eventsList;
-  if (selectedEvents.length > 0) {
+  if (selectedEvents.length > 0 && selectedEvents[0] !== undefined) {
     eventsList = (
       selectedEvents.map(event => (
         event &&
@@ -88,8 +88,8 @@ const HomePage = () => {
     );
   }
 
-  let groupsList = null;
-  if (selectedGroups.length > 0) {
+  let groupsList;
+  if (selectedGroups.length > 0 && selectedGroups[0] !== undefined) {
     groupsList = (
       selectedGroups.map(group => (
         group &&
@@ -106,9 +106,11 @@ const HomePage = () => {
       ))
     );
   } else {
-    <div className='home-no-groups'>
-      <span>There are currently no groups!</span>
-    </div>
+    groupsList = (
+      <div className='home-no-groups'>
+        <span>There are currently no groups!</span>
+      </div>
+    );
   }
 
   return (
