@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
 
@@ -10,8 +10,10 @@ const GroupDetailPage = () => {
   const history = useHistory();
   const group = useSelector(state => state.groups[groupId]);
   const sessionUser = useSelector(state => state.session.user);
-  console.log('test', group)
+
   const dispatch = useDispatch();
+
+  const [ join, setJoin ] = useState('Join');
 
   useEffect(() => {
     dispatch(getGroupDetails(groupId));
@@ -30,7 +32,11 @@ const GroupDetailPage = () => {
 
   const handleJoin = async (e) => {
     e.preventDefault();
-    // TODO
+    if (join === 'Join') {
+      setJoin('Joined')
+    } else {
+      setJoin('Join');
+    }
   };
 
   if (!group) return null;
@@ -56,7 +62,7 @@ const GroupDetailPage = () => {
   } else if (sessionUser && sessionUser.id !== group.ownerId) {
     groupButtons = (
       <div className='group-details-buttons'>
-        <button type='button'>Join</button>
+        <button type='button' onClick={handleJoin}>{join}</button>
       </div>
     );
   } else {
