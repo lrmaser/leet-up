@@ -109,15 +109,6 @@ const EventDetailPage = () => {
                   <p className='event-details-details'>{event.details}</p>
                 </div>
               </div>
-              <div className='event-details-attendees-container'>
-                <h2 className='event-details-attendees-header'>
-                  {/* Replace hardcoded attendees */}
-                  Attendees (0)
-                </h2>
-                <div className='event-details-attendees'>
-                  {/* Component for attendees? */}
-                </div>
-              </div>
             </div>
           </div>
           <div className='event-details-right-container'>
