@@ -99,10 +99,6 @@ const GroupDetailPage = () => {
       <div className='group-details-right-container'>
         <div className='group-details-right'>
           <h1>{group.name}</h1>
-          <span className='group-details-members'>
-            {/* Remove hardcoded members */}
-            0 members
-          </span>
           <span className='group-details-organizer'>
             {/* Find way to check if sessionUser is owner */}
             Organized by {group?.User?.username}
