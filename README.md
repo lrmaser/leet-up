@@ -52,7 +52,6 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -137,17 +136,6 @@ To get a local copy up and running follow these simple steps.
 
 
 
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
 <!-- ROADMAP -->
 ## Roadmap
 
@@ -196,4 +184,5 @@ Project Link: [https://github.com/lrmaser/leet-up](https://github.com/lrmaser/le
 [issues-url]: https://github.com/lrmaser/leet-up/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/laura-maser-225196b2/
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: ![image](https://user-images.githubusercontent.com/92398763/153805869-5c569689-6931-4eac-b5dc-a321391e5394.png)
+
