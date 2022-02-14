@@ -26,8 +26,13 @@ const GroupDetailPage = () => {
 
   const handleDelete = async (e) => {
     e.preventDefault();
-    dispatch(deleteGroup(groupId));
-    history.push('/groups');
+
+    if (window.confirm(`Are you sure you'd like to delete ${group.name}?`)) {
+      dispatch(deleteGroup(groupId));
+      history.push('/groups');
+    } else {
+      history.push(`/groups/${groupId}`);
+    }
   };
 
   const handleJoin = async (e) => {
