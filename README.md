@@ -139,8 +139,8 @@ To get a local copy up and running follow these simple steps.
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Events
-- [ ] Groups
+- [x] Events
+- [x] Groups
     - [ ] Calendar
     - [ ] Search by location & group info
 - [ ] RSVPs
