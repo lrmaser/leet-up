@@ -86,21 +86,11 @@ const GroupDetailPage = () => {
             <p className='group-details-details'>{group.details}</p>
           </div>
         </div>
-        <div className='group-details-past-events-container'>
-          <h2 className='group-details-past-events-header'>
-            {/* Replace hardcoded past events */}
-            Past Events (0)
-          </h2>
-          <div className='group-details-past-events'>
-            {/* Component for past events? */}
-          </div>
-        </div>
       </div>
       <div className='group-details-right-container'>
         <div className='group-details-right'>
           <h1>{group.name}</h1>
           <span className='group-details-organizer'>
-            {/* Find way to check if sessionUser is owner */}
             Organized by {group?.User?.username}
           </span>
           {groupButtons}
