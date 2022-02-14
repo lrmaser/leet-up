@@ -41,8 +41,13 @@ const EventDetailPage = () => {
 
   const handleDelete = async (e) => {
     e.preventDefault();
-    dispatch(deleteEvent(eventId));
-    history.push('/events');
+
+    if (window.confirm(`Are you sure you'd like to delete ${event.name}?`)) {
+      dispatch(deleteEvent(eventId));
+      history.push('/events');
+    } else {
+      history.push(`/events/${eventId}`);
+    }
   };
 
   const handleAttend = async (e) => {
