@@ -63,7 +63,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![LeetUp Screen Shot][product-screenshot]](https://leetup.herokuapp.com/)
 
 LeetUp, a Meetup clone, is a place for developers (and friends of developers) to find like-minded peers. Users can create and join groups in their areas of interest as well as attend events organized by those groups.
 
@@ -184,5 +184,5 @@ Project Link: [https://github.com/lrmaser/leet-up](https://github.com/lrmaser/le
 [issues-url]: https://github.com/lrmaser/leet-up/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/laura-maser-225196b2/
-[product-screenshot]: ![image](https://user-images.githubusercontent.com/92398763/153805869-5c569689-6931-4eac-b5dc-a321391e5394.png)
+[product-screenshot]: https://user-images.githubusercontent.com/92398763/153805869-5c569689-6931-4eac-b5dc-a321391e5394.png
 
