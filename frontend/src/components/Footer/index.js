@@ -15,6 +15,7 @@ const Footer = () => {
             <i className="fab fa-github"></i>
           </a>
         </div>
+        <div className='footer-technologies'>JavaScript • CSS • React • Redux • Express • Sequelize • PostgreSQL</div>
       </div>
     </div>
   );
