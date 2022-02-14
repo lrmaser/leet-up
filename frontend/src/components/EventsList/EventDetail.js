@@ -25,7 +25,6 @@ const EventDetail = ({ id, image, date, eventName, groupName }) => {
           <div className='event-list-date'>{`${formatDate(date).toUpperCase()} @ ${formatTime(date).toUpperCase()}`}</div>
           <p className='event-list-event-name'>{eventName}</p>
           <p className='event-list-group-name'>{groupName}</p>
-          <div className='event-list-attendees'>0 attendees</div>
         </div>
       </div>
     </Link>
